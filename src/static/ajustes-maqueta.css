@@ -1,0 +1,5 @@
+/* Ajustes de la maqueta estática (sin JS), tomados del HTML de la fase 2. */
+.grafico svg { display: block; max-width: 100%; height: auto; }
+.flujo__titulo { font-size: var(--t-sm); color: var(--cm-tinta); line-height: 1.2; }
+.flujo__detalle { font-size: var(--t-xs); color: var(--cm-tinta-2); line-height: 1.3; }
+.lista li { grid-template-columns: 24px 1fr auto; }
