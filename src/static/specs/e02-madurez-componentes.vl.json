@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "E-02 Madurez por componente: filas vigentes con dato o informativas sobre el total vigente del componente. Una barra por componente en el orden de la carga, nombre arriba y porcentaje a la derecha. Color de marca único, sin semáforo (PO E06). Conteos en el tooltip.",
+  "usermeta": {
+    "id": "e02-madurez-componentes", "version": "1.1", "tablero": "ejecutivo", "elemento_po": "E06", "regla": "E-02",
+    "endpoint": "/v1/tablero/ejecutivo", "datasets": {"componentes": "madurez_componentes[]"}
+  },
+  "width": "container",
+  "height": {"step": 26},
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "padding": {"left": 0, "right": 0, "top": 2, "bottom": 0},
+  "data": {"name": "componentes"},
+  "transform": [
+    {"calculate": "datum.madurez_pct / 100", "as": "madurez"},
+    {"calculate": "1", "as": "total"}
+  ],
+  "encoding": {
+    "y": {"field": "componente", "type": "nominal", "sort": {"field": "orden", "op": "min", "order": "ascending"},
+          "axis": null, "scale": {"paddingInner": 0, "paddingOuter": 0}},
+    "tooltip": [
+      {"field": "componente", "title": "Componente"},
+      {"field": "madurez", "title": "Madurez", "format": ".1%"},
+      {"field": "filas", "title": "Requisitos vigentes"},
+      {"field": "con_dato", "title": "Con información o informativos"},
+      {"field": "proyectadas", "title": "Proyectados"},
+      {"field": "pendientes", "title": "Pendientes de insumo"},
+      {"field": "brechas", "title": "Brechas"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "#E6EAEC", "cornerRadius": 4, "height": 8, "yOffset": 8},
+      "encoding": {"x": {"field": "total", "type": "quantitative", "scale": {"domain": [0, 1], "nice": false}, "axis": null}}
+    },
+    {
+      "mark": {"type": "bar", "color": "#20A7C9", "cornerRadius": 4, "height": 8, "yOffset": 8},
+      "encoding": {"x": {"field": "madurez", "type": "quantitative"}}
+    },
+    {
+      "mark": {"type": "text", "align": "left", "baseline": "bottom", "dy": 2, "fontSize": 12, "color": "#333333",
+               "font": "Soleil, Segoe UI, Arial, sans-serif", "limit": {"expr": "width - 64"}},
+      "encoding": {"x": {"datum": 0}, "text": {"field": "componente"}}
+    },
+    {
+      "mark": {"type": "text", "align": "right", "baseline": "bottom", "dy": 2, "fontSize": 13, "fontWeight": "bold",
+               "color": "#333333", "font": "Soleil, Segoe UI, Arial, sans-serif"},
+      "encoding": {"x": {"datum": 1}, "text": {"field": "madurez", "format": ".1%"}}
+    }
+  ],
+  "config": {"view": {"stroke": null}, "background": null}
+}

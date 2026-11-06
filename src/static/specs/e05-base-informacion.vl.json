@@ -1,0 +1,163 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "E-05 Base de información: conteo de insumos por clase. El porcentaje sale del conteo (C5). La leyenda con conteos va en HTML junto al gráfico.",
+  "usermeta": {
+    "id": "e05-base-informacion",
+    "version": "1.1",
+    "tablero": "ejecutivo",
+    "elemento_po": "E05",
+    "regla": "E-05",
+    "endpoint": "/v1/tablero/ejecutivo",
+    "datasets": {
+      "clases": "base_informacion.clases[]"
+    }
+  },
+  "width": 136,
+  "height": 136,
+  "data": {
+    "name": "clases"
+  },
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "insumos",
+          "as": "total"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.total > 0 ? datum.insumos / datum.total : 0",
+      "as": "pct"
+    },
+    {
+      "calculate": "indexof(['primaria', 'secundaria', 'brecha'], datum.clase)",
+      "as": "orden"
+    },
+    {
+      "calculate": "datum.clase === 'primaria' ? 'Fuentes primarias' : datum.clase === 'secundaria' ? 'Fuentes secundarias (proyectos comparables)' : 'Brechas (información por desarrollar)'",
+      "as": "etq"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 47,
+        "outerRadius": 66,
+        "padAngle": 0.02
+      },
+      "encoding": {
+        "theta": {
+          "field": "insumos",
+          "type": "quantitative",
+          "stack": true
+        },
+        "order": {
+          "field": "orden"
+        },
+        "color": {
+          "field": "clase",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "primaria",
+              "secundaria",
+              "brecha"
+            ],
+            "range": [
+              "#20A7C9",
+              "#8FD3E4",
+              "#C4CBCF"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "etq",
+            "title": "Clase"
+          },
+          {
+            "field": "insumos",
+            "title": "Insumos",
+            "format": ",d"
+          },
+          {
+            "field": "pct",
+            "title": "Participación",
+            "format": ".1%"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "insumos",
+              "as": "t"
+            }
+          ]
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 24,
+        "fontWeight": "bold",
+        "color": "#333333",
+        "dy": -6,
+        "font": "Soleil, Segoe UI, Arial, sans-serif"
+      },
+      "encoding": {
+        "x": {
+          "value": 68
+        },
+        "y": {
+          "value": 68
+        },
+        "text": {
+          "field": "t",
+          "format": ",d"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "count",
+              "as": "n"
+            }
+          ]
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#666666",
+        "dy": 12,
+        "text": "insumos analizados",
+        "font": "Soleil, Segoe UI, Arial, sans-serif"
+      },
+      "encoding": {
+        "x": {
+          "value": 68
+        },
+        "y": {
+          "value": 68
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  }
+}

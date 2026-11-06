@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { HomeView } from './presentation/views/HomeView'
+import { EjecutivoView } from './presentation/views/ejecutivo/EjecutivoView'
 
 export const webRouter = createBrowserRouter([
   {
     path: '/',
-    element: <HomeView />,
+    element: <EjecutivoView />,
   },
   {
     path: '*',
