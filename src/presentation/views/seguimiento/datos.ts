@@ -1,22 +1,8 @@
-/* Datos quemados del tablero de seguimiento (paquete PX fase 3).
-   Los JSON se usan tal como vienen del paquete: un archivo por endpoint de LLD-15 §6.
-   No hay llamadas a API; la vista solo lee estos objetos. */
+/* Datos del tablero de seguimiento. Se consumen del mock (json-server sobre db.json): un recurso por
+   endpoint de LLD-15 §6 (seguimiento-contador, -indicadores, -fecha, -curva-s, -frentes y -hitos).
+   db.json se genera con `npm run mock:db` a partir de los JSON del paquete, sin modificarlos. */
 import type { EstadoPantalla, TableroEjecutivo } from '../ejecutivo/datos'
-import ejecutivoBase from '../../../static/datos/ejecutivo.json'
-import ejecutivoVacio from '../../../static/datos/vacio/ejecutivo.json'
-import errores from '../../../static/datos/errores.json'
-import contadorBase from '../../../static/datos/seguimiento-contador.json'
-import indicadoresBase from '../../../static/datos/seguimiento-indicadores.json'
-import fechaBase from '../../../static/datos/seguimiento-fecha.json'
-import curvaBase from '../../../static/datos/seguimiento-curva-s.json'
-import frentesBase from '../../../static/datos/seguimiento-frentes.json'
-import hitosBase from '../../../static/datos/seguimiento-hitos.json'
-import contadorVacio from '../../../static/datos/vacio/seguimiento-contador.json'
-import indicadoresVacio from '../../../static/datos/vacio/seguimiento-indicadores.json'
-import fechaVacio from '../../../static/datos/vacio/seguimiento-fecha.json'
-import curvaVacio from '../../../static/datos/vacio/seguimiento-curva-s.json'
-import frentesVacio from '../../../static/datos/vacio/seguimiento-frentes.json'
-import hitosVacio from '../../../static/datos/vacio/seguimiento-hitos.json'
+import { obtener, obtenerCodigoError, obtenerCortes, type Corte as CortePublicado } from '../../../application/services/mock'
 
 export type Corte = { corte_id: number; fecha_corte: string } | null
 
@@ -121,29 +107,42 @@ export type TableroSeguimiento = {
   hitos: SeguimientoHitos
 }
 
-const tableroBase: TableroSeguimiento = {
-  cabecera: (ejecutivoBase as TableroEjecutivo).cabecera,
-  corte: contadorBase.corte,
-  contador: contadorBase as SeguimientoContador,
-  indicadores: indicadoresBase as SeguimientoIndicadores,
-  fecha: fechaBase as SeguimientoFecha,
-  curva: curvaBase as SeguimientoCurvaS,
-  frentes: frentesBase as SeguimientoFrentes,
-  hitos: hitosBase as SeguimientoHitos,
+export type Fuente = 'base' | 'vacio'
+
+export type DatosSeguimiento = { tablero: TableroSeguimiento; cortes: CortePublicado[]; codigoError: string | null }
+
+/** GET de los seis endpoints de seguimiento, la cabecera (ejecutivo) y los cortes, en paralelo. */
+export async function cargarSeguimiento(vista: VistaSeguimiento): Promise<DatosSeguimiento> {
+  const f = vista.fuente
+  const [ejecutivo, contador, indicadores, fecha, curva, frentes, hitos, cortes, codigoError] = await Promise.all([
+    obtener<TableroEjecutivo>('ejecutivo', f === 'vacio' ? 'vacio' : 'sin-aceleracion'),
+    obtener<SeguimientoContador>('seguimiento-contador', f),
+    obtener<SeguimientoIndicadores>('seguimiento-indicadores', f),
+    obtener<SeguimientoFecha>('seguimiento-fecha', f),
+    obtener<SeguimientoCurvaS>('seguimiento-curva-s', f),
+    obtener<SeguimientoFrentes>('seguimiento-frentes', f),
+    obtener<SeguimientoHitos>('seguimiento-hitos', f),
+    obtenerCortes(f),
+    obtenerCodigoError(), // código de soporte del panel de error (C-02), desde errores/500
+  ])
+  return {
+    tablero: { cabecera: ejecutivo.cabecera, corte: contador.corte, contador, indicadores, fecha, curva, frentes, hitos },
+    cortes,
+    codigoError,
+  }
 }
 
-const tableroVacio: TableroSeguimiento = {
-  cabecera: (ejecutivoVacio as TableroEjecutivo).cabecera,
+/** Estructura vacía mientras llega la primera respuesta del mock. */
+export const tableroEnBlanco: TableroSeguimiento = {
+  cabecera: { nombre_tablero: '', meta_fecha: '' },
   corte: null,
-  contador: contadorVacio as SeguimientoContador,
-  indicadores: indicadoresVacio as SeguimientoIndicadores,
-  fecha: fechaVacio as SeguimientoFecha,
-  curva: curvaVacio as SeguimientoCurvaS,
-  frentes: frentesVacio as SeguimientoFrentes,
-  hitos: hitosVacio as SeguimientoHitos,
+  contador: { corte: null, contador: null, criticos: [], simulador: null },
+  indicadores: { corte: null, spi: null, avance: null, tiempo: null, actividades: null },
+  fecha: { corte: null, serie: [], extrapolacion_sin_avance: [] },
+  curva: { corte: null, plan: [], real: [] },
+  frentes: { corte: null, umbrales: null, atraso_por_frente: [], avance_por_frente: [] },
+  hitos: { corte: null, hitos: [] },
 }
-
-export const codigoErrorInterno = errores['500'].id_solicitud
 
 export type Perfil = 'seguimiento' | 'detalle'
 
@@ -154,7 +153,7 @@ export type VistaSeguimiento = {
   id: string
   rotulo: string
   sello: string
-  datos: TableroSeguimiento
+  fuente: Fuente
   perfil: Perfil
   escenario: Escenario
   estado?: EstadoPantalla
@@ -167,7 +166,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'base',
     rotulo: 'Base',
     sello: 'Maqueta estática · datos sintéticos · perfil seguimiento: sin pestaña Detalle ni enlace en P05; simulador en r = 0 y d = 0',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'seguimiento',
     escenario: SIN_ESCENARIO,
   },
@@ -175,7 +174,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'escenario',
     rotulo: 'Escenario',
     sello: 'Maqueta estática · datos sintéticos · escenario simulado: recuperación 50 % y d = 0',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'seguimiento',
     escenario: { r: 0.5, d: 0 },
   },
@@ -183,7 +182,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'escenario-ahorro',
     rotulo: 'Escenario con ahorro',
     sello: 'Maqueta estática · datos sintéticos · escenario simulado con ahorro: recuperación 100 % y d = −5',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'seguimiento',
     escenario: { r: 1, d: -5 },
   },
@@ -191,7 +190,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'perfil-detalle',
     rotulo: 'Perfil detalle',
     sello: 'Maqueta estática · datos sintéticos · perfil detalle: tres pestañas y enlace en P05',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'detalle',
     escenario: SIN_ESCENARIO,
   },
@@ -199,7 +198,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'vacio',
     rotulo: 'Vacío',
     sello: 'Maqueta estática · datos sintéticos · estado vacío: sin corte publicado',
-    datos: tableroVacio,
+    fuente: 'vacio',
     perfil: 'seguimiento',
     escenario: SIN_ESCENARIO,
   },
@@ -207,7 +206,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'cargando',
     rotulo: 'Cargando',
     sello: 'Maqueta estática · datos sintéticos · estado cargando',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'seguimiento',
     escenario: SIN_ESCENARIO,
     estado: 'cargando',
@@ -216,7 +215,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: 'error',
     rotulo: 'Error',
     sello: 'Maqueta estática · datos sintéticos · estado error',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'seguimiento',
     escenario: SIN_ESCENARIO,
     estado: 'error',
@@ -225,7 +224,7 @@ export const vistasSeguimiento: VistaSeguimiento[] = [
     id: '403',
     rotulo: 'Sin acceso',
     sello: 'Maqueta estática · datos sintéticos · estado sin permiso (403)',
-    datos: tableroBase,
+    fuente: 'base',
     perfil: 'seguimiento',
     escenario: SIN_ESCENARIO,
     estado: '403',

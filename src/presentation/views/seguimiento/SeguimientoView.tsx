@@ -1,10 +1,13 @@
-import { useEffect, type MouseEvent, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Cabecera } from '../../../application/components/Cabecera'
 import { PanelesEstado } from '../../../application/components/PanelesEstado'
+import { Pestanas } from '../../../application/components/Pestanas'
 import { diasEntre } from '../../../domain/fechas'
+import { estadoDePantalla, useCargaMock } from '../../../application/services/mock'
 import {
-  codigoErrorInterno,
+  cargarSeguimiento,
+  tableroEnBlanco,
   vistaSeguimientoPorId,
   vistasSeguimiento,
   type Critico,
@@ -172,12 +175,12 @@ function Contador({ datos, simulacion }: { datos: TableroSeguimiento; simulacion
   )
 }
 
-/** P02 · En la maqueta los deslizadores son estáticos (no recalculan): muestran el escenario de la vista. */
-function Simulador({ datos, escenario, simulacion, claveVista }: {
+/** P02 · Corre en el navegador, sin red (C-16): cambia solo el anillo «Escenario simulado» y su marca en P03. */
+function Simulador({ datos, escenario, simulacion, alCambiar }: {
   datos: TableroSeguimiento
   escenario: Escenario
   simulacion: Simulacion | null
-  claveVista: string
+  alCambiar: (escenario: Escenario) => void
 }) {
   const sim = datos.contador.simulador
   const vacia = simulacion == null || sim == null || datos.contador.criticos.length === 0
@@ -189,21 +192,20 @@ function Simulador({ datos, escenario, simulacion, claveVista }: {
       titulo="Simulador"
       vacia={vacia}
       mensajeVacio="No hay actividades que corran la fecha"
-      pie={<span className="solo-maqueta">En la maqueta los deslizadores son estáticos; la vista «escenario» muestra 50{NBSP}%.</span>}
     >
       {simulacion && sim && (
-        <div className="simulador" key={claveVista}>
+        <div className="simulador">
           <label className="simulador__ctl">
             <span>Recuperación del atraso actual <b>{rPct}{NBSP}%</b></span>
-            <input type="range" min={sim.r_min * 100} max={sim.r_max * 100} step="5" defaultValue={rPct} aria-label="Recuperación del atraso actual" />
+            <input type="range" min={sim.r_min * 100} max={sim.r_max * 100} step="5" value={rPct} aria-label="Recuperación del atraso actual" onChange={(e) => alCambiar({ ...escenario, r: Number(e.target.value) / 100 })} />
             <span className="simulador__ext"><span>{sim.r_min * 100}{NBSP}%</span><span>{sim.r_max * 100}{NBSP}%</span></span>
           </label>
           <label className="simulador__ctl">
             <span>Optimización ({MENOS}) o retraso adicional (+) <b>{conSigno(escenario.d)} días hábiles</b></span>
-            <input type="range" min={sim.d_min} max={sim.d_max} step="1" defaultValue={escenario.d} aria-label="Optimización o retraso adicional" />
+            <input type="range" min={sim.d_min} max={sim.d_max} step="1" value={escenario.d} aria-label="Optimización o retraso adicional" onChange={(e) => alCambiar({ ...escenario, d: Number(e.target.value) })} />
             <span className="simulador__ext"><span>{num(sim.d_min, 0)}</span><span>0</span><span>{conSigno(sim.d_max)}</span></span>
           </label>
-          <span className="boton boton--sec">Quitar escenario</span>
+          <button type="button" className="boton boton--sec" onClick={() => alCambiar({ r: 0, d: 0 })}>Quitar escenario</button>
           <p className="simulador__res">
             Escenario simulado: <b>{fechaCorte(simulacion.fecha)}</b> · {conSigno(simulacion.corrimiento)} días hábiles frente a la línea base
           </p>
@@ -287,7 +289,7 @@ function Criticos({ datos, perfil }: { datos: TableroSeguimiento; perfil: Perfil
         {resto > 0 && (
           <li className="critico critico--resto">
             <p>y {resto} {resto === 1 ? 'actividad más' : 'actividades más'} con impacto</p>
-            {perfil === 'detalle' && <a href="#detalle" onClick={pestanaPendiente}>Ver la lista completa en el tablero de detalle</a>}
+            {perfil === 'detalle' && <Link to="/detalle">Ver la lista completa en el tablero de detalle</Link>}
           </li>
         )}
       </ol>
@@ -401,7 +403,7 @@ function ActividadesRetraso({ datos }: { datos: TableroSeguimiento }) {
       {act && (
         <div className="retraso">
           <p><span className="cifra">{act.vencidas + act.atrasadas}</span> <span className="apoyo">de {act.total} actividades</span></p>
-          <p className="apoyo">{act.retraso_ruta_critica} en ruta crítica (holgura 0 o menos)</p>
+          <p className="apoyo">{act.retraso_ruta_critica} en ruta crítica con retraso</p>
           <div className="apilada" title={definicion}>
             {segmentos.filter((s) => s.valor > 0).map((s) => (
               <span key={s.nombre} style={{ flex: s.valor, background: s.color }} title={`${s.nombre}: ${s.valor}. ${definicion}`} />
@@ -572,16 +574,21 @@ function AvancePorFrente({ datos }: { datos: TableroSeguimiento }) {
 
 /* ---------- Vista ---------- */
 
-function pestanaPendiente(event: MouseEvent<HTMLAnchorElement>) {
-  event.preventDefault()
-}
-
 export function SeguimientoView() {
   const [params, setParams] = useSearchParams()
   const vista = vistaSeguimientoPorId(params.get('vista'))
-  const tablero = vista.datos
-  const simulacion = simular(tablero.contador, vista.escenario)
-  const estado = vista.estado ?? null
+  const [intento, setIntento] = useState(0)
+  const carga = useCargaMock(`${vista.id}:${intento}`, () => cargarSeguimiento(vista))
+  const tablero = carga.datos?.tablero ?? tableroEnBlanco
+  const [escenario, setEscenario] = useState(vista.escenario)
+  useEffect(() => setEscenario(vista.escenario), [vista])
+  const simulacion = simular(tablero.contador, escenario)
+  const estado = estadoDePantalla(vista.estado, carga.estado)
+  const codigoError = carga.codigoError ?? carga.datos?.codigoError ?? ''
+
+  useEffect(() => {
+    document.title = 'Seguimiento del cronograma · maqueta'
+  }, [])
 
   useEffect(() => {
     if (estado) document.body.dataset.estado = estado
@@ -593,17 +600,16 @@ export function SeguimientoView() {
 
   return (
     <>
-      <Cabecera datos={{ corte: tablero.corte, cabecera: tablero.cabecera }} rotulo="Seguimiento del cronograma" />
-      <nav className="pestanas" aria-label="Tableros">
-        <Link to="/">Ejecutivo</Link>
-        <a href="#" aria-current="page" onClick={pestanaPendiente}>Seguimiento</a>
-        {vista.perfil === 'detalle' && <a href="#detalle" aria-disabled="true" onClick={pestanaPendiente}>Detalle</a>}
-      </nav>
+      <Cabecera
+        datos={carga.datos ? { corte: tablero.corte, cabecera: tablero.cabecera, cortes: carga.datos.cortes } : null}
+        rotulo="Seguimiento del cronograma"
+      />
+      <Pestanas actual="seguimiento" perfil={vista.perfil} />
       <main className="lienzo">
-        <span className="aviso-carga sr">Cargando el tablero</span>
+        {estado === 'cargando' && <span className="aviso-carga sr">Cargando el tablero</span>}
         <div className="grilla-seguimiento">
           <Contador datos={tablero} simulacion={simulacion} />
-          <Simulador datos={tablero} escenario={vista.escenario} simulacion={simulacion} claveVista={vista.id} />
+          <Simulador datos={tablero} escenario={escenario} simulacion={simulacion} alCambiar={setEscenario} />
           <Fechas datos={tablero} simulacion={simulacion} />
           <Causa datos={tablero} />
           <Criticos datos={tablero} perfil={vista.perfil} />
@@ -617,7 +623,7 @@ export function SeguimientoView() {
           <Hitos datos={tablero} />
           <AvancePorFrente datos={tablero} />
         </div>
-        <PanelesEstado codigoError={codigoErrorInterno} onReintentar={() => setParams({})} />
+        <PanelesEstado codigoError={codigoError} onReintentar={() => (vista.estado ? setParams({}) : setIntento((n) => n + 1))} />
       </main>
       <p className="sello solo-maqueta">{vista.sello}</p>
       <details className="solo-maqueta barra" open>

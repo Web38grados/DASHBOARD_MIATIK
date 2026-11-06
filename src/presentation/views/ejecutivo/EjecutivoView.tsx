@@ -1,13 +1,14 @@
-import { useEffect, useState, type MouseEvent } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Cabecera } from '../../../application/components/Cabecera'
 import { PanelesEstado } from '../../../application/components/PanelesEstado'
+import { Pestanas } from '../../../application/components/Pestanas'
+import { estadoDePantalla, useCargaMock } from '../../../application/services/mock'
 import {
-  rutaErrorInterno,
+  cargarEjecutivo,
   tableroEnBlanco,
   vistaPorId,
   vistasEjecutivo,
-  type EstadoPantalla,
   type TableroEjecutivo,
   type TarjetaItem,
 } from './datos'
@@ -97,7 +98,7 @@ function Preparacion({ datos }: { datos: TableroEjecutivo }) {
               datasets={{ preparacion: [datos.preparacion] }}
               className="grafico"
               style={{ width: 112, flex: 'none' }}
-              title="Promedio de la madurez de los 5 componentes clave"
+              title={`Promedio de la madurez de los ${datos.preparacion?.componentes ?? 0} componentes clave`}
             />
           )}
           <div className="k-prep__texto">
@@ -128,6 +129,11 @@ function Aceleracion({ datos }: { datos: TableroEjecutivo }) {
       </header>
       <div className="tarjeta__cuerpo">
         <div className="k-acel" style={{ flex: 1 }}>
+          {aceleracion == null && !sinDatos && (
+            <div className="k-acel__cifra">
+              <span className="apoyo">Sin información publicada en este corte</span>
+            </div>
+          )}
           {aceleracion?.valor != null && (
             <div className="k-acel__cifra">
               <span className="cifra">
@@ -158,7 +164,7 @@ function Aceleracion({ datos }: { datos: TableroEjecutivo }) {
 function Confianza({ datos }: { datos: TableroEjecutivo }) {
   const confianza = datos.confianza
   const sinDatos = confianza == null
-  const nivel = confianza ? nivelConfianza(confianza.etiqueta ?? '') : 'baja'
+  const nivel = confianza ? nivelConfianza(confianza.etiqueta) : null
 
   return (
     <section className="tarjeta" style={{ gridArea: 'e04' }} data-id="E-04" data-vacia={vacia(sinDatos)} aria-labelledby="t-E-04">
@@ -172,10 +178,10 @@ function Confianza({ datos }: { datos: TableroEjecutivo }) {
         {confianza && (
           <div className="e04">
             <div className="e04__fila">
-              <span className="nivel" data-nivel={nivel}>{confianza.etiqueta}</span>
+              <span className="nivel" data-nivel={nivel ?? undefined}>{confianza.etiqueta}</span>
               <VegaChart
                 spec={specConfianza}
-                datasets={{ confianza: [{ k: 1, nivel }] }}
+                datasets={{ confianza: [{ k: 1, nivel: nivel ?? '' }] }}
                 className="grafico e04__grafico"
               />
             </div>
@@ -379,83 +385,22 @@ function Prioridades({ datos }: { datos: TableroEjecutivo }) {
   )
 }
 
-function pestanaPendiente(event: MouseEvent<HTMLAnchorElement>) {
-  event.preventDefault()
-}
-
-function aplicarEstado(estado: EstadoPantalla | null) {
-  if (estado) document.body.dataset.estado = estado
-  else delete document.body.dataset.estado
-}
-
 export function EjecutivoView() {
   const [params, setParams] = useSearchParams()
   const vista = vistaPorId(params.get('vista'))
-  const [datos, setDatos] = useState<TableroEjecutivo | null>(null)
-  const [estado, setEstado] = useState<EstadoPantalla | null>('cargando')
-  const [codigoError, setCodigoError] = useState('sint-0000-0000')
-  const tablero = datos ?? tableroEnBlanco
+  const [intento, setIntento] = useState(0)
+  const carga = useCargaMock(`${vista.id}:${intento}`, () => cargarEjecutivo(vista))
+  const tablero = carga.datos?.tablero ?? tableroEnBlanco
+  const estado = estadoDePantalla(vista.estado, carga.estado)
+  const codigoError = carga.codigoError ?? carga.datos?.codigoError ?? ''
 
   useEffect(() => {
-    const ctrl = new AbortController()
-
-    const rutaCabecera = vistasEjecutivo[0].ruta
-
-    if (vista.estado === 'error' || vista.estado === '403') {
-      setEstado(vista.estado)
-      if (rutaCabecera) {
-        fetch(rutaCabecera, { signal: ctrl.signal })
-          .then(async (respuesta) => {
-            if (!respuesta.ok) throw new Error(String(respuesta.status))
-            return respuesta.json() as Promise<TableroEjecutivo>
-          })
-          .then((cuerpo) => {
-            if (!ctrl.signal.aborted) setDatos(cuerpo)
-          })
-          .catch((error: unknown) => {
-            if (error instanceof DOMException && error.name === 'AbortError') return
-          })
-      }
-    }
-
-    if (vista.estado === 'error') {
-      fetch(rutaErrorInterno, { signal: ctrl.signal })
-        .then(async (respuesta) => {
-          if (!respuesta.ok) throw new Error(String(respuesta.status))
-          return respuesta.json() as Promise<{ id_solicitud?: string }>
-        })
-        .then((cuerpo) => {
-          if (!ctrl.signal.aborted && cuerpo.id_solicitud) setCodigoError(cuerpo.id_solicitud)
-        })
-        .catch((error: unknown) => {
-          if (error instanceof DOMException && error.name === 'AbortError') return
-        })
-      return () => ctrl.abort()
-    }
-
-    if (vista.estado === '403' || !vista.ruta) return () => ctrl.abort()
-
-    setEstado('cargando')
-    fetch(vista.ruta, { signal: ctrl.signal })
-      .then(async (respuesta) => {
-        if (!respuesta.ok) throw new Error(String(respuesta.status))
-        return respuesta.json() as Promise<TableroEjecutivo>
-      })
-      .then((cuerpo) => {
-        if (ctrl.signal.aborted) return
-        setDatos(cuerpo)
-        setEstado(vista.estado === 'cargando' ? 'cargando' : null)
-      })
-      .catch((error: unknown) => {
-        if (error instanceof DOMException && error.name === 'AbortError') return
-        if (!ctrl.signal.aborted) setEstado('error')
-      })
-
-    return () => ctrl.abort()
-  }, [vista])
+    document.title = 'Panel ejecutivo · maqueta'
+  }, [])
 
   useEffect(() => {
-    aplicarEstado(estado)
+    if (estado) document.body.dataset.estado = estado
+    else delete document.body.dataset.estado
     return () => {
       delete document.body.dataset.estado
     }
@@ -463,14 +408,10 @@ export function EjecutivoView() {
 
   return (
     <>
-      <Cabecera datos={datos} rotulo="Panel ejecutivo" />
-      <nav className="pestanas" aria-label="Tableros">
-        <a href="/" aria-current="page">Ejecutivo</a>
-        <Link to="/seguimiento">Seguimiento</Link>
-        <a href="#detalle" aria-disabled="true" onClick={pestanaPendiente}>Detalle</a>
-      </nav>
+      <Cabecera datos={carga.datos ? { ...tablero, cortes: carga.datos.cortes } : null} rotulo="Panel ejecutivo" />
+      <Pestanas actual="ejecutivo" perfil="detalle" />
       <main className="lienzo">
-        <span className="aviso-carga sr">Cargando el tablero</span>
+        {estado === 'cargando' && <span className="aviso-carga sr">Cargando el tablero</span>}
         <div className="grilla-ejecutivo">
           <Preparacion datos={tablero} />
           <Aceleracion datos={tablero} />
@@ -481,7 +422,7 @@ export function EjecutivoView() {
           <Flujo datos={tablero} />
           <Prioridades datos={tablero} />
         </div>
-        <PanelesEstado codigoError={codigoError} onReintentar={() => setParams({})} />
+        <PanelesEstado codigoError={codigoError} onReintentar={() => (vista.estado ? setParams({}) : setIntento((n) => n + 1))} />
       </main>
       <p className="sello solo-maqueta">{vista.sello}</p>
       <details className="solo-maqueta barra" open>

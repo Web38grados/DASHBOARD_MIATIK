@@ -17,7 +17,7 @@
       "desviacion_pp": -47.254852941176466
     },
     {
-      "frente": "Frente 2 · Datos geoespaciales y cartografía",
+      "frente": "Frente 2 · Información técnica de base",
       "ventana_inicio": "2026-08-10",
       "ventana_fin": "2027-06-25",
       "real_pct": 9.527133956386294,
@@ -25,7 +25,7 @@
       "desviacion_pp": -13.83741433021807
     },
     {
-      "frente": "Frente 3 · Trabajo de campo y muestreo",
+      "frente": "Frente 3 · Trabajo de campo",
       "ventana_inicio": "2026-08-18",
       "ventana_fin": "2027-05-28",
       "real_pct": 18.80342756183746,
@@ -33,7 +33,7 @@
       "desviacion_pp": -7.345194346289748
     },
     {
-      "frente": "Frente 4 · Modelación y área de influencia",
+      "frente": "Frente 4 · Modelación técnica",
       "ventana_inicio": "2026-09-01",
       "ventana_fin": "2027-03-26",
       "real_pct": 22.8489,
@@ -41,7 +41,7 @@
       "desviacion_pp": -4.151899999999998
     },
     {
-      "frente": "Frente 5 · Caracterización del entorno",
+      "frente": "Frente 5 · Caracterización técnica",
       "ventana_inicio": "2026-10-05",
       "ventana_fin": "2027-05-21",
       "real_pct": 7.962545454545453,
@@ -59,7 +59,7 @@
       "desviacion_pp": -47.254852941176466
     },
     {
-      "frente": "Frente 2 · Datos geoespaciales y cartografía",
+      "frente": "Frente 2 · Información técnica de base",
       "ventana_inicio": "2026-08-10",
       "ventana_fin": "2027-06-25",
       "real_pct": 9.527133956386294,
@@ -67,7 +67,7 @@
       "desviacion_pp": -13.83741433021807
     },
     {
-      "frente": "Frente 3 · Trabajo de campo y muestreo",
+      "frente": "Frente 3 · Trabajo de campo",
       "ventana_inicio": "2026-08-18",
       "ventana_fin": "2027-05-28",
       "real_pct": 18.80342756183746,
@@ -75,7 +75,7 @@
       "desviacion_pp": -7.345194346289748
     },
     {
-      "frente": "Frente 4 · Modelación y área de influencia",
+      "frente": "Frente 4 · Modelación técnica",
       "ventana_inicio": "2026-09-01",
       "ventana_fin": "2027-03-26",
       "real_pct": 22.8489,
@@ -83,7 +83,7 @@
       "desviacion_pp": -4.151899999999998
     },
     {
-      "frente": "Frente 5 · Caracterización del entorno",
+      "frente": "Frente 5 · Caracterización técnica",
       "ventana_inicio": "2026-10-05",
       "ventana_fin": "2027-05-21",
       "real_pct": 7.962545454545453,
@@ -91,7 +91,7 @@
       "desviacion_pp": -0.21968181818181964
     },
     {
-      "frente": "Frente 6 · Evaluación de impactos",
+      "frente": "Frente 6 · Análisis de resultados",
       "ventana_inicio": "2027-01-12",
       "ventana_fin": "2027-05-14",
       "real_pct": 0.0,
@@ -99,7 +99,7 @@
       "desviacion_pp": 0.0
     },
     {
-      "frente": "Frente 7 · Planes de manejo y seguimiento",
+      "frente": "Frente 7 · Planes de acción y seguimiento",
       "ventana_inicio": "2027-03-01",
       "ventana_fin": "2027-06-11",
       "real_pct": 0.0,

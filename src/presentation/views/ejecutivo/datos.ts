@@ -1,4 +1,7 @@
-export const API_BASE = 'http://localhost:3001'
+/* Datos del tablero ejecutivo. Se consumen del mock (json-server sobre db.json, endpoint
+   `ejecutivo` = /v1/tablero/ejecutivo de LLD-15 §6). db.json se genera con `npm run mock:db`
+   a partir de los JSON del paquete tableros-maquetas-v1, sin modificarlos. */
+import { obtener, obtenerCodigoError, obtenerCortes, type Corte } from '../../../application/services/mock'
 
 export type TarjetaItem = {
   orden: number
@@ -9,14 +12,14 @@ export type TarjetaItem = {
   valor: number | null
 }
 
+export type Cabecera = {
+  nombre_tablero: string
+  meta_fecha: string
+}
+
 export type TableroEjecutivo = {
-  id?: string
   corte: { corte_id: number; fecha_corte: string } | null
-  cabecera: {
-    nombre_tablero: string
-    nombre_proyecto: string
-    meta_fecha: string
-  }
+  cabecera: Cabecera
   madurez_componentes: Array<{
     componente: string
     orden: number
@@ -25,6 +28,8 @@ export type TableroEjecutivo = {
     proyectadas: number
     pendientes: number
     brechas: number
+    /** Cualquier otro estado vigente: cuenta en el total, no en la madurez (PC E-02). */
+    otros: number
     madurez_pct: number
   }>
   preparacion: { preparacion_pct: number; componentes: number } | null
@@ -39,90 +44,53 @@ export type TableroEjecutivo = {
   flujo: { items: TarjetaItem[] }
 }
 
-export type ErrorApi = {
-  id: string
-  error: string
-  id_solicitud?: string
-  perfil_requerido?: string
-  perfil_actual?: string
-  permitido?: string
-}
-
 export type EstadoPantalla = 'cargando' | 'error' | '403'
 
 export type VistaEjecutivo = {
   id: string
   rotulo: string
   sello: string
-  ruta: string | null
+  /** Registro de la colección `ejecutivo` del mock. */
+  registro: string
+  /** Variante de E-04: solo cambia la tarjeta de confianza sobre la vista base (como en las maquetas). */
+  confianza?: string
   estado?: EstadoPantalla
 }
 
-const rutaTablero = (id: string) => `${API_BASE}/ejecutivo/${id}`
+export type DatosEjecutivo = { tablero: TableroEjecutivo; cortes: Corte[]; codigoError: string | null }
+
+const BASE = 'con-aceleracion'
 
 export const vistasEjecutivo: VistaEjecutivo[] = [
-  {
-    id: 'con-aceleracion',
-    rotulo: 'Con aceleración',
-    sello: 'Maqueta estática · datos sintéticos · vista base: confianza Baja, con aceleración',
-    ruta: rutaTablero('con-aceleracion'),
-  },
-  {
-    id: 'sin-aceleracion',
-    rotulo: 'Sin aceleración',
-    sello: 'Maqueta estática · datos sintéticos · variante E-08 sin tarjeta de aceleración',
-    ruta: rutaTablero('sin-aceleracion'),
-  },
-  {
-    id: 'confianza-media',
-    rotulo: 'Confianza media',
-    sello: 'Maqueta estática · datos sintéticos · variante E-04 Media',
-    ruta: rutaTablero('confianza-media'),
-  },
-  {
-    id: 'confianza-alta',
-    rotulo: 'Confianza alta',
-    sello: 'Maqueta estática · datos sintéticos · variante E-04 Alta',
-    ruta: rutaTablero('confianza-alta'),
-  },
-  {
-    id: 'vacio',
-    rotulo: 'Vacío',
-    sello: 'Maqueta estática · datos sintéticos · estado vacío: sin corte publicado',
-    ruta: rutaTablero('vacio'),
-  },
-  {
-    id: 'cargando',
-    rotulo: 'Cargando',
-    sello: 'Maqueta estática · datos sintéticos · estado cargando',
-    ruta: rutaTablero('con-aceleracion'),
-    estado: 'cargando',
-  },
-  {
-    id: 'error',
-    rotulo: 'Error',
-    sello: 'Maqueta estática · datos sintéticos · estado error',
-    ruta: null,
-    estado: 'error',
-  },
-  {
-    id: '403',
-    rotulo: 'Sin acceso',
-    sello: 'Maqueta estática · datos sintéticos · estado sin permiso (403)',
-    ruta: null,
-    estado: '403',
-  },
+  { id: 'con-aceleracion', rotulo: 'Base', sello: 'Maqueta estática · datos sintéticos · vista base: confianza Baja, con aceleración', registro: BASE },
+  { id: 'sin-aceleracion', rotulo: 'Sin aceleración', sello: 'Maqueta estática · datos sintéticos · variante E-08 sin tarjeta de aceleración', registro: 'sin-aceleracion' },
+  { id: 'confianza-media', rotulo: 'Confianza media', sello: 'Maqueta estática · datos sintéticos · variante E-04 Media', registro: BASE, confianza: 'confianza-media' },
+  { id: 'confianza-alta', rotulo: 'Confianza alta', sello: 'Maqueta estática · datos sintéticos · variante E-04 Alta', registro: BASE, confianza: 'confianza-alta' },
+  { id: 'vacio', rotulo: 'Vacío', sello: 'Maqueta estática · datos sintéticos · estado vacío: sin corte publicado', registro: 'vacio' },
+  { id: 'cargando', rotulo: 'Cargando', sello: 'Maqueta estática · datos sintéticos · estado cargando', registro: BASE, estado: 'cargando' },
+  { id: 'error', rotulo: 'Error', sello: 'Maqueta estática · datos sintéticos · estado error', registro: BASE, estado: 'error' },
+  { id: '403', rotulo: 'Sin acceso', sello: 'Maqueta estática · datos sintéticos · estado sin permiso (403)', registro: BASE, estado: '403' },
 ]
 
-export const rutaErrorInterno = `${API_BASE}/errores/500`
+export function vistaPorId(id: string | null): VistaEjecutivo {
+  return vistasEjecutivo.find((vista) => vista.id === id) ?? vistasEjecutivo[0]
+}
 
+/** GET /api/ejecutivo/{registro} y /api/cortes; con variante de E-04, también la tarjeta de confianza. */
+export async function cargarEjecutivo(vista: VistaEjecutivo): Promise<DatosEjecutivo> {
+  const [tablero, cortes, variante, codigoError] = await Promise.all([
+    obtener<TableroEjecutivo>('ejecutivo', vista.registro),
+    obtenerCortes(vista.registro === 'vacio' ? 'vacio' : 'base'),
+    vista.confianza ? obtener<TableroEjecutivo>('ejecutivo', vista.confianza) : null,
+    obtenerCodigoError(), // código de soporte del panel de error (C-02), desde errores/500
+  ])
+  return { tablero: variante ? { ...tablero, confianza: variante.confianza } : tablero, cortes, codigoError }
+}
+
+/** Estructura vacía mientras llega la primera respuesta del mock. */
 export const tableroEnBlanco: TableroEjecutivo = {
   corte: null,
-  cabecera: {
-    nombre_tablero: 'Tablero de preparación del documento técnico',
-    nombre_proyecto: '',
-    meta_fecha: '',
-  },
+  cabecera: { nombre_tablero: '', meta_fecha: '' },
   madurez_componentes: [],
   preparacion: null,
   confianza: null,
@@ -131,8 +99,4 @@ export const tableroEnBlanco: TableroEjecutivo = {
   prioridades: { items: [] },
   capacidades: { items: [], aceleracion: null },
   flujo: { items: [] },
-}
-
-export function vistaPorId(id: string | null): VistaEjecutivo {
-  return vistasEjecutivo.find((vista) => vista.id === id) ?? vistasEjecutivo[0]
 }

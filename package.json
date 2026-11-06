@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "api": "json-server db.json --port 3001",
+    "mock:db": "node scripts/generar-db.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

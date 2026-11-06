@@ -1,4 +1,4 @@
-import logoCliente from '../../static/marca/logo-cliente.png'
+import logoCliente from '../../assets/logo-cliente.png'
 import { fechaCorte } from '../../presentation/views/ejecutivo/formato'
 
 export const SUBTITULO_TABLERO =
@@ -6,7 +6,9 @@ export const SUBTITULO_TABLERO =
 
 export type DatosCabecera = {
   corte: { corte_id: number; fecha_corte: string } | null
-  cabecera: { nombre_tablero: string; nombre_proyecto: string; meta_fecha: string }
+  cabecera: { nombre_tablero: string; meta_fecha: string }
+  /** Cortes publicados (`/v1/tablero/cortes`) para el selector (C-12). */
+  cortes?: Array<{ corte_id: number; fecha_corte: string }>
 }
 
 function IconoMeta() {
@@ -37,8 +39,13 @@ export function Cabecera({ datos, rotulo }: { datos: DatosCabecera | null; rotul
             <span>
               Datos al corte del <strong>{fecha}</strong>
             </span>
-            <select className="selector-corte" aria-label="Corte" defaultValue={fecha}>
-              <option>{fecha}</option>
+            <select className="selector-corte" aria-label="Corte" value={datos?.corte?.corte_id} onChange={() => undefined}>
+              {(datos?.cortes?.length ? datos.cortes : [datos!.corte!]).map((c) => (
+                // El mock solo trae cifras del último corte; los demás se listan sin poder elegirse.
+                <option key={c.corte_id} value={c.corte_id} disabled={c.corte_id !== datos?.corte?.corte_id}>
+                  {fechaCorte(c.fecha_corte)}
+                </option>
+              ))}
             </select>
           </>
         ) : (

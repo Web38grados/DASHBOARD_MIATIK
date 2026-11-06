@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { EjecutivoView } from './presentation/views/ejecutivo/EjecutivoView'
 import { SeguimientoView } from './presentation/views/seguimiento/SeguimientoView'
+import { DetalleView } from './presentation/views/detalle/DetalleView'
 
 export const webRouter = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const webRouter = createBrowserRouter([
   {
     path: '/seguimiento',
     element: <SeguimientoView />,
+  },
+  {
+    path: '/detalle',
+    element: <DetalleView />,
   },
   {
     path: '*',

@@ -2,7 +2,6 @@
   "corte": null,
   "cabecera": {
     "nombre_tablero": "Tablero de preparación del documento técnico",
-    "nombre_proyecto": "Proyecto Demostración (sintético)",
     "meta_fecha": "2027-07-15"
   },
   "madurez_componentes": [],
@@ -10,12 +9,7 @@
   "confianza": null,
   "base_informacion": null,
   "brechas_criticas": {
-    "items": [],
-    "abiertas_por_severidad": {
-      "alta": 3,
-      "media": 7,
-      "baja": 5
-    }
+    "items": []
   },
   "prioridades": {
     "items": []

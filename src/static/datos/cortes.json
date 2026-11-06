@@ -3,17 +3,17 @@
     {
       "corte_id": 3,
       "fecha_corte": "2026-11-02",
-      "archivo_sha256": "be470584db869c0e2e820a684a81bacd4b39afc0dfc1274e29052df41dc3c880"
+      "archivo_sha256": "ed960f3f8536a6eeb12020a53bb9558032867ae820d8afe2cd531ef3105fad39"
     },
     {
       "corte_id": 2,
       "fecha_corte": "2026-10-19",
-      "archivo_sha256": "4876254b0c1db80c6048f1fc9fc71324ae8679a80b38df802dee90ced3c94cb5"
+      "archivo_sha256": "2f7feeb0633f2c0bdcf904e7f7250ff53562ee262334d7063a51b676fa9b9e99"
     },
     {
       "corte_id": 1,
       "fecha_corte": "2026-10-05",
-      "archivo_sha256": "ab577761bed3bf212af3dc2faa8a597bece536bdc8a69d2080891f3a432b14b5"
+      "archivo_sha256": "dc3cc526ee6a487ec954b0299d1361283c88a238af67a294622a8862be8fe32d"
     }
   ]
 }

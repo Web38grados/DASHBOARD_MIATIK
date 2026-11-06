@@ -32,8 +32,9 @@ export function cifraEntera(valor: number) {
   return entero.format(valor)
 }
 
-export function nivelConfianza(etiqueta: string) {
-  const nivel = etiqueta.toLowerCase()
+/** E-04: solo «Baja», «Media» o «Alta» ponen el marcador; con otro texto el medidor queda sin marcador (PC E-04, CA 2). */
+export function nivelConfianza(etiqueta: string | null): 'baja' | 'media' | 'alta' | null {
+  const nivel = (etiqueta ?? '').trim().toLowerCase()
   if (nivel === 'baja' || nivel === 'media' || nivel === 'alta') return nivel
-  return 'baja'
+  return null
 }

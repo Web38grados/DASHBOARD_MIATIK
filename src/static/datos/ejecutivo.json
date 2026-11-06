@@ -5,7 +5,6 @@
   },
   "cabecera": {
     "nombre_tablero": "Tablero de preparación del documento técnico",
-    "nombre_proyecto": "Proyecto Demostración (sintético)",
     "meta_fecha": "2027-07-15"
   },
   "madurez_componentes": [
@@ -17,46 +16,51 @@
       "proyectadas": 8,
       "pendientes": 6,
       "brechas": 4,
+      "otros": 0,
       "madurez_pct": 68.96551724137932
     },
     {
-      "componente": "Componente B · Medio abiótico",
+      "componente": "Componente B · Caracterización técnica",
       "orden": 2,
       "filas": 78,
       "con_dato": 48,
       "proyectadas": 14,
       "pendientes": 10,
       "brechas": 6,
+      "otros": 0,
       "madurez_pct": 61.53846153846154
     },
     {
-      "componente": "Componente C · Medio biótico",
+      "componente": "Componente C · Información de soporte",
       "orden": 3,
       "filas": 52,
       "con_dato": 28,
       "proyectadas": 10,
       "pendientes": 9,
       "brechas": 5,
+      "otros": 0,
       "madurez_pct": 53.84615384615385
     },
     {
-      "componente": "Componente D · Medio socioeconómico",
+      "componente": "Componente D · Análisis de resultados",
       "orden": 4,
       "filas": 50,
       "con_dato": 30,
       "proyectadas": 9,
       "pendientes": 7,
       "brechas": 4,
+      "otros": 0,
       "madurez_pct": 60.0
     },
     {
-      "componente": "Componente E · Evaluación, zonificación y planes de manejo",
+      "componente": "Componente E · Planes de acción y seguimiento",
       "orden": 5,
       "filas": 52,
       "con_dato": 22,
       "proyectadas": 12,
       "pendientes": 10,
       "brechas": 8,
+      "otros": 0,
       "madurez_pct": 42.30769230769231
     }
   ],
@@ -94,7 +98,7 @@
       {
         "orden": 1,
         "titulo": "Definición pendiente de los supuestos de diseño del componente principal",
-        "detalle": "Condiciona la descripción del proyecto y el área de influencia (sintético).",
+        "detalle": "Condiciona la descripción del proyecto y su alcance técnico (sintético).",
         "etiqueta": "Alta",
         "mes": null,
         "valor": null
@@ -102,7 +106,7 @@
       {
         "orden": 2,
         "titulo": "Modelo de referencia sin calibrar con la segunda campaña de campo",
-        "detalle": "Afecta la evaluación de impactos y su cronograma (sintético).",
+        "detalle": "Afecta el análisis de resultados y su cronograma (sintético).",
         "etiqueta": "Alta",
         "mes": null,
         "valor": null
@@ -117,24 +121,19 @@
       },
       {
         "orden": 4,
-        "titulo": "Acuerdos de acceso a predios para el muestreo de temporada",
+        "titulo": "Acuerdos de acceso para la campaña de campo de temporada",
         "detalle": "Puede correr la campaña de campo (sintético).",
         "etiqueta": "Media",
         "mes": null,
         "valor": null
       }
-    ],
-    "abiertas_por_severidad": {
-      "alta": 3,
-      "media": 7,
-      "baja": 5
-    }
+    ]
   },
   "prioridades": {
     "items": [
       {
         "orden": 1,
-        "titulo": "Cierre de supuestos de diseño y huellas de trabajo",
+        "titulo": "Cierre de supuestos de diseño y alcance del trabajo",
         "detalle": null,
         "etiqueta": null,
         "mes": "2026-12-01",
