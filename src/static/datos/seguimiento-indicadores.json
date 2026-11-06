@@ -1,0 +1,32 @@
+{
+  "corte": {
+    "corte_id": 3,
+    "fecha_corte": "2026-11-02"
+  },
+  "spi": {
+    "valor": 0.5582835708121927,
+    "estado": "critico",
+    "spi_verde": 0.95,
+    "spi_ambar": 0.85
+  },
+  "avance": {
+    "real_pct": 12.168844011142061,
+    "plan_pct": 21.796887186629526,
+    "desviacion_pp": -9.628043175487464
+  },
+  "tiempo": {
+    "tiempo_consumido_pct": 27.232142857142858,
+    "plan_pct": 21.796887186629526,
+    "real_pct": 12.168844011142061
+  },
+  "actividades": {
+    "total": 65,
+    "vencidas": 9,
+    "atrasadas": 2,
+    "en_curso": 3,
+    "completadas": 1,
+    "por_iniciar": 50,
+    "retraso_ruta_critica": 1,
+    "umbral_atraso_pp": 10.0
+  }
+}

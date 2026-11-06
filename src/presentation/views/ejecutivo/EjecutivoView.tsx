@@ -1,6 +1,7 @@
 import { useEffect, useState, type MouseEvent } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import logoCliente from '../../../static/marca/logo-cliente.png'
+import { Link, useSearchParams } from 'react-router-dom'
+import { Cabecera } from '../../../application/components/Cabecera'
+import { PanelesEstado } from '../../../application/components/PanelesEstado'
 import {
   rutaErrorInterno,
   tableroEnBlanco,
@@ -10,12 +11,9 @@ import {
   type TableroEjecutivo,
   type TarjetaItem,
 } from './datos'
-import { cifraEntera, fechaCorte, mesAnio, nivelConfianza, participacion } from './formato'
+import { cifraEntera, mesAnio, nivelConfianza, participacion } from './formato'
 import { specBase, specConfianza, specMadurez, specPreparacion } from './specs'
 import { VegaChart } from './VegaChart'
-
-const SUBTITULO =
-  'Preparación del documento técnico con inteligencia artificial: insumos, brechas y prioridades'
 
 const CLASES = [
   { clase: 'primaria', nombre: 'Fuentes primarias', color: 'var(--serie-real)' },
@@ -25,14 +23,6 @@ const CLASES = [
 
 function vacia(condicion: boolean) {
   return condicion ? '1' : '0'
-}
-
-function IconoMeta() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 21V3m0 1h11l-2 4 2 4H5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  )
 }
 
 function IconoListo() {
@@ -87,46 +77,6 @@ function IconoValidacion() {
 }
 
 const ICONOS_FLUJO = [IconoInsumos, IconoAnalisis, IconoBrechas, IconoValidacion]
-
-function Cabecera({ datos }: { datos: TableroEjecutivo | null }) {
-  const fecha = datos?.corte ? fechaCorte(datos.corte.fecha_corte) : null
-  const meta = datos?.cabecera.meta_fecha ? fechaCorte(datos.cabecera.meta_fecha) : null
-
-  return (
-    <header className="cabecera" data-id="E-01">
-      <img className="cabecera__logo" src={logoCliente} alt="Logo del cliente" />
-      <span className="cabecera__sep" aria-hidden="true" />
-      <div className="cabecera__titulos">
-        <p className="cabecera__tablero">{datos?.cabecera.nombre_tablero || 'Tablero de preparación del documento técnico'}</p>
-        <p className="cabecera__proyecto">Panel ejecutivo</p>
-        <p className="cabecera__subtitulo">{SUBTITULO}</p>
-      </div>
-      <div className="cabecera__corte">
-        {fecha ? (
-          <>
-            <span>
-              Datos al corte del <strong>{fecha}</strong>
-            </span>
-            <select className="selector-corte" aria-label="Corte" defaultValue={fecha}>
-              <option>{fecha}</option>
-            </select>
-          </>
-        ) : (
-          <span>
-            <strong>Aún no hay un corte publicado</strong>
-          </span>
-        )}
-      </div>
-      <div className="meta">
-        <IconoMeta />
-        <div>
-          <p className="meta__rotulo">Fecha meta</p>
-          <p className="meta__fecha">{meta}</p>
-        </div>
-      </div>
-    </header>
-  )
-}
 
 function Preparacion({ datos }: { datos: TableroEjecutivo }) {
   const sinDatos = datos.preparacion == null
@@ -513,10 +463,10 @@ export function EjecutivoView() {
 
   return (
     <>
-      <Cabecera datos={datos} />
+      <Cabecera datos={datos} rotulo="Panel ejecutivo" />
       <nav className="pestanas" aria-label="Tableros">
         <a href="/" aria-current="page">Ejecutivo</a>
-        <a href="#seguimiento" aria-disabled="true" onClick={pestanaPendiente}>Seguimiento</a>
+        <Link to="/seguimiento">Seguimiento</Link>
         <a href="#detalle" aria-disabled="true" onClick={pestanaPendiente}>Detalle</a>
       </nav>
       <main className="lienzo">
@@ -531,24 +481,7 @@ export function EjecutivoView() {
           <Flujo datos={tablero} />
           <Prioridades datos={tablero} />
         </div>
-        <section className="panel-estado" id="panel-error" role="alert">
-          <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" fill="none" stroke="var(--estado-critico)" strokeWidth="1.8" />
-            <path d="M12 7v6M12 16.5v.5" stroke="var(--estado-critico)" strokeWidth="2" />
-          </svg>
-          <h2>No se pudo cargar el tablero</h2>
-          <p>Intenta de nuevo en unos minutos. Si el problema sigue, informa este código:</p>
-          <p><code>{codigoError}</code></p>
-          <button type="button" className="boton" onClick={() => setParams({})}>Reintentar</button>
-        </section>
-        <section className="panel-estado" id="panel-403" role="alert">
-          <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="var(--cm-tinta-2)" strokeWidth="1.8" />
-            <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="var(--cm-tinta-2)" strokeWidth="1.8" />
-          </svg>
-          <h2>No tienes acceso a este tablero</h2>
-          <p>Tu perfil no incluye esta vista. Si la necesitas, pídela a quien administra los accesos.</p>
-        </section>
+        <PanelesEstado codigoError={codigoError} onReintentar={() => setParams({})} />
       </main>
       <p className="sello solo-maqueta">{vista.sello}</p>
       <details className="solo-maqueta barra" open>
