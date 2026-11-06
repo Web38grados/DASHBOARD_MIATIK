@@ -1,0 +1,12 @@
+# Lo que no entra al contexto de construcción.
+node_modules
+dist
+.git
+.gitignore
+.vscode
+.idea
+*.local
+*.log
+Dockerfile
+docker-compose.yml
+.dockerignore
