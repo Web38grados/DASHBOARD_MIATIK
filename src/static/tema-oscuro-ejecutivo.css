@@ -1,0 +1,93 @@
+/* Tema oscuro del tablero ejecutivo · solo estilo («Evaluación del nuevo diseño del tablero ejecutivo», §3).
+   - Alcance: solo el ejecutivo (body que contiene .grilla-ejecutivo); seguimiento y detalle siguen claros,
+     porque la evaluación deja por definir si también cambian.
+   - No agrega datos nuevos (variación, productividad, confiabilidad) ni textos fijos: rige el paquete vigente.
+   - Solo en pantalla: al imprimir se usa el tema claro de tokens.css y tablero.css (C-05).
+   - Los colores de texto cumplen contraste AA sobre el fondo azul noche (C-04); los semáforos conservan su texto. */
+
+@media screen {
+  body:has(.grilla-ejecutivo) {
+    /* Superficies: fondo azul noche y tarjetas translúcidas */
+    --sup-pagina: #0A1628;
+    --sup-tarjeta: rgb(17 36 60 / 78%);
+    --sup-sutil: rgb(255 255 255 / 6%);
+    --borde: rgb(143 211 228 / 24%);
+    --borde-fuerte: rgb(143 211 228 / 38%);
+    --pista: rgb(255 255 255 / 12%);
+
+    /* Textos claros (AA sobre #0A1628 y sobre las tarjetas) */
+    --cm-tinta: #E8EEF5;
+    --cm-tinta-2: #A9B8C8;
+    --cm-tinta-3: #8597AB;
+    --cm-cian-texto: #6FD3EA;
+    --cm-cian-oscuro: #8FD3E4;
+    --cm-cian-tenue: rgb(32 167 201 / 18%);
+
+    /* Acentos: verde para cifras grandes, azules para la dona */
+    --acento-cifra: #5BE49B;
+    --serie-secundaria: #7FB8F0;
+    --serie-brecha: #2F5FB3;
+
+    /* Brillo cian de las tarjetas */
+    --sombra: 0 0 0 1px rgb(32 167 201 / 22%), 0 10px 28px rgb(0 0 0 / 35%), 0 0 22px rgb(32 167 201 / 10%);
+
+    background:
+      radial-gradient(1200px 600px at 85% 0%, rgb(32 167 201 / 12%), transparent 60%),
+      var(--sup-pagina);
+    color: var(--cm-tinta);
+  }
+
+  /* Tarjetas translúcidas con borde fino cian y brillo */
+  body:has(.grilla-ejecutivo) .tarjeta {
+    background: var(--sup-tarjeta);
+    border: 1px solid var(--borde);
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* Cifras grandes en verde y en negrita */
+  body:has(.grilla-ejecutivo) .cifra,
+  body:has(.grilla-ejecutivo) .k-acel__cifra .cifra { color: var(--acento-cifra); font-weight: var(--peso-bold); }
+
+  /* Gráficos de Vega: sus colores vienen fijos en las specs del paquete; se adaptan al fondo oscuro sin tocarlas */
+  body:has(.grilla-ejecutivo) .grafico svg text[fill="#333333"] { fill: var(--cm-tinta); }
+  body:has(.grilla-ejecutivo) .grafico svg text[fill="#666666"] { fill: var(--cm-tinta-2); }
+  body:has(.grilla-ejecutivo) .grafico svg path[fill="#E6EAEC"] { fill: var(--pista); }
+  body:has(.grilla-ejecutivo) .grafico svg text[font-size="24px"] { fill: var(--acento-cifra); } /* cifra central de E-03 y E-05 */
+  body:has(.grilla-ejecutivo) .e05 .grafico svg path[fill="#8FD3E4"] { fill: var(--serie-secundaria); }
+  body:has(.grilla-ejecutivo) .e05 .grafico svg path[fill="#C4CBCF"] { fill: var(--serie-brecha); }
+  body:has(.grilla-ejecutivo) .e04__grafico svg path[aria-roledescription="point"] { fill: var(--cm-tinta); } /* marcador de E-04 */
+
+  /* Ícono de línea junto al título de cada tarjeta (fijo por elemento; el contrato no trae íconos) */
+  body:has(.grilla-ejecutivo) .tarjeta__titulo { display: flex; align-items: center; gap: 8px; }
+  body:has(.grilla-ejecutivo) .tarjeta__titulo::before {
+    content: "";
+    flex: none;
+    width: 18px;
+    height: 18px;
+    background-color: var(--cm-cian-texto);
+    -webkit-mask: var(--icono) center / contain no-repeat;
+    mask: var(--icono) center / contain no-repeat;
+  }
+  /* E-03 Preparación: anillo */
+  body:has(.grilla-ejecutivo) [data-id="E-03"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 3a9 9 0 0 1 9 9'/%3E%3C/svg%3E"); }
+  /* E-08 Aceleración: rayo */
+  body:has(.grilla-ejecutivo) [data-id="E-08"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M13 2L4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E"); }
+  /* E-04 Confianza: escudo con check */
+  body:has(.grilla-ejecutivo) [data-id="E-04"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E"); }
+  /* E-05 Base de información: base de datos */
+  body:has(.grilla-ejecutivo) [data-id="E-05"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cellipse cx='12' cy='5' rx='8' ry='3'/%3E%3Cpath d='M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5'/%3E%3Cpath d='M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3'/%3E%3C/svg%3E"); }
+  /* E-02 Madurez por componente: barras */
+  body:has(.grilla-ejecutivo) [data-id="E-02"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 6h12M4 12h16M4 18h8'/%3E%3C/svg%3E"); }
+  /* E-06 Brechas críticas: alerta */
+  body:has(.grilla-ejecutivo) [data-id="E-06"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12 3l10 18H2z'/%3E%3Cpath d='M12 10v5M12 18v.5'/%3E%3C/svg%3E"); }
+  /* E-07 Prioridades: lista con check */
+  body:has(.grilla-ejecutivo) [data-id="E-07"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 6h10M10 12h10M10 18h10'/%3E%3Cpath d='M3 6l1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17'/%3E%3C/svg%3E"); }
+  /* E-09 Flujo de trabajo: ruta */
+  body:has(.grilla-ejecutivo) [data-id="E-09"] { --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='5' cy='18' r='2'/%3E%3Ccircle cx='19' cy='6' r='2'/%3E%3Cpath d='M7 18h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7'/%3E%3C/svg%3E"); }
+
+  /* Elementos de apoyo de la maqueta legibles sobre el fondo oscuro */
+  body:has(.grilla-ejecutivo) .sello,
+  body:has(.grilla-ejecutivo) .barra { background: rgb(17 36 60 / 92%); color: var(--cm-tinta); border-color: var(--borde-fuerte); }
+}

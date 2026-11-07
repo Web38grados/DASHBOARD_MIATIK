@@ -1,0 +1,3389 @@
+{
+  "cortes": [
+    {
+      "id": "base",
+      "cortes": [
+        {
+          "corte_id": 3,
+          "fecha_corte": "2026-11-02",
+          "archivo_sha256": "ed960f3f8536a6eeb12020a53bb9558032867ae820d8afe2cd531ef3105fad39"
+        },
+        {
+          "corte_id": 2,
+          "fecha_corte": "2026-10-19",
+          "archivo_sha256": "2f7feeb0633f2c0bdcf904e7f7250ff53562ee262334d7063a51b676fa9b9e99"
+        },
+        {
+          "corte_id": 1,
+          "fecha_corte": "2026-10-05",
+          "archivo_sha256": "dc3cc526ee6a487ec954b0299d1361283c88a238af67a294622a8862be8fe32d"
+        }
+      ]
+    },
+    {
+      "id": "vacio",
+      "cortes": []
+    }
+  ],
+  "ejecutivo": [
+    {
+      "id": "con-aceleracion",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "cabecera": {
+        "nombre_tablero": "Tablero de preparación del documento técnico",
+        "meta_fecha": "2027-07-15"
+      },
+      "madurez_componentes": [
+        {
+          "componente": "Componente A · Descripción del proyecto",
+          "orden": 1,
+          "filas": 58,
+          "con_dato": 40,
+          "proyectadas": 8,
+          "pendientes": 6,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 68.96551724137932
+        },
+        {
+          "componente": "Componente B · Caracterización técnica",
+          "orden": 2,
+          "filas": 78,
+          "con_dato": 48,
+          "proyectadas": 14,
+          "pendientes": 10,
+          "brechas": 6,
+          "otros": 0,
+          "madurez_pct": 61.53846153846154
+        },
+        {
+          "componente": "Componente C · Información de soporte",
+          "orden": 3,
+          "filas": 52,
+          "con_dato": 28,
+          "proyectadas": 10,
+          "pendientes": 9,
+          "brechas": 5,
+          "otros": 0,
+          "madurez_pct": 53.84615384615385
+        },
+        {
+          "componente": "Componente D · Análisis de resultados",
+          "orden": 4,
+          "filas": 50,
+          "con_dato": 30,
+          "proyectadas": 9,
+          "pendientes": 7,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 60
+        },
+        {
+          "componente": "Componente E · Planes de acción y seguimiento",
+          "orden": 5,
+          "filas": 52,
+          "con_dato": 22,
+          "proyectadas": 12,
+          "pendientes": 10,
+          "brechas": 8,
+          "otros": 0,
+          "madurez_pct": 42.30769230769231
+        }
+      ],
+      "preparacion": {
+        "preparacion_pct": 57.331564986737405,
+        "componentes": 5
+      },
+      "confianza": {
+        "orden": 1,
+        "titulo": "Confianza en la fecha",
+        "detalle": "Con el avance de este corte, la fecha meta exige recuperar ritmo en los frentes críticos (texto sintético).",
+        "etiqueta": "Baja",
+        "mes": null,
+        "valor": null
+      },
+      "base_informacion": {
+        "total": 156,
+        "clases": [
+          {
+            "clase": "primaria",
+            "insumos": 87
+          },
+          {
+            "clase": "secundaria",
+            "insumos": 46
+          },
+          {
+            "clase": "brecha",
+            "insumos": 23
+          }
+        ]
+      },
+      "brechas_criticas": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Definición pendiente de los supuestos de diseño del componente principal",
+            "detalle": "Condiciona la descripción del proyecto y su alcance técnico (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Modelo de referencia sin calibrar con la segunda campaña de campo",
+            "detalle": "Afecta el análisis de resultados y su cronograma (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Información secundaria incompleta para un frente de caracterización",
+            "detalle": "Se cubre con proyección mientras llega el insumo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Acuerdos de acceso para la campaña de campo de temporada",
+            "detalle": "Puede correr la campaña de campo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      },
+      "prioridades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Cierre de supuestos de diseño y alcance del trabajo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Calibración del modelo de referencia con datos de campo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Acuerdos de acceso para la campaña de temporada",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2027-01-01",
+            "valor": null
+          }
+        ]
+      },
+      "capacidades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Síntesis de estudios",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Contraste con proyectos comparables",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Identificación de brechas",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Borradores por capítulo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          }
+        ],
+        "aceleracion": {
+          "orden": 1,
+          "titulo": "Reducción estimada en tiempos de elaboración",
+          "detalle": "Frente a una elaboración sin asistencia, con el mismo alcance (cifra sintética).",
+          "etiqueta": null,
+          "mes": null,
+          "valor": 35
+        }
+      },
+      "flujo": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Insumos",
+            "detalle": "Información del proyecto y referencias comparables",
+            "etiqueta": "Paso 1",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Análisis con IA",
+            "detalle": "Integración, síntesis y contraste",
+            "etiqueta": "Paso 2",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Brechas y prioridades",
+            "detalle": "Identificación y plan de cierre",
+            "etiqueta": "Paso 3",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Validación técnica",
+            "detalle": "Revisión de especialistas y consolidación en el documento técnico",
+            "etiqueta": "Paso 4",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "sin-aceleracion",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "cabecera": {
+        "nombre_tablero": "Tablero de preparación del documento técnico",
+        "meta_fecha": "2027-07-15"
+      },
+      "madurez_componentes": [
+        {
+          "componente": "Componente A · Descripción del proyecto",
+          "orden": 1,
+          "filas": 58,
+          "con_dato": 40,
+          "proyectadas": 8,
+          "pendientes": 6,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 68.96551724137932
+        },
+        {
+          "componente": "Componente B · Caracterización técnica",
+          "orden": 2,
+          "filas": 78,
+          "con_dato": 48,
+          "proyectadas": 14,
+          "pendientes": 10,
+          "brechas": 6,
+          "otros": 0,
+          "madurez_pct": 61.53846153846154
+        },
+        {
+          "componente": "Componente C · Información de soporte",
+          "orden": 3,
+          "filas": 52,
+          "con_dato": 28,
+          "proyectadas": 10,
+          "pendientes": 9,
+          "brechas": 5,
+          "otros": 0,
+          "madurez_pct": 53.84615384615385
+        },
+        {
+          "componente": "Componente D · Análisis de resultados",
+          "orden": 4,
+          "filas": 50,
+          "con_dato": 30,
+          "proyectadas": 9,
+          "pendientes": 7,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 60
+        },
+        {
+          "componente": "Componente E · Planes de acción y seguimiento",
+          "orden": 5,
+          "filas": 52,
+          "con_dato": 22,
+          "proyectadas": 12,
+          "pendientes": 10,
+          "brechas": 8,
+          "otros": 0,
+          "madurez_pct": 42.30769230769231
+        }
+      ],
+      "preparacion": {
+        "preparacion_pct": 57.331564986737405,
+        "componentes": 5
+      },
+      "confianza": {
+        "orden": 1,
+        "titulo": "Confianza en la fecha",
+        "detalle": "Con el avance de este corte, la fecha meta exige recuperar ritmo en los frentes críticos (texto sintético).",
+        "etiqueta": "Baja",
+        "mes": null,
+        "valor": null
+      },
+      "base_informacion": {
+        "total": 156,
+        "clases": [
+          {
+            "clase": "primaria",
+            "insumos": 87
+          },
+          {
+            "clase": "secundaria",
+            "insumos": 46
+          },
+          {
+            "clase": "brecha",
+            "insumos": 23
+          }
+        ]
+      },
+      "brechas_criticas": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Definición pendiente de los supuestos de diseño del componente principal",
+            "detalle": "Condiciona la descripción del proyecto y su alcance técnico (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Modelo de referencia sin calibrar con la segunda campaña de campo",
+            "detalle": "Afecta el análisis de resultados y su cronograma (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Información secundaria incompleta para un frente de caracterización",
+            "detalle": "Se cubre con proyección mientras llega el insumo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Acuerdos de acceso para la campaña de campo de temporada",
+            "detalle": "Puede correr la campaña de campo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      },
+      "prioridades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Cierre de supuestos de diseño y alcance del trabajo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Calibración del modelo de referencia con datos de campo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Acuerdos de acceso para la campaña de temporada",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2027-01-01",
+            "valor": null
+          }
+        ]
+      },
+      "capacidades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Síntesis de estudios",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Contraste con proyectos comparables",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Identificación de brechas",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Borradores por capítulo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          }
+        ],
+        "aceleracion": null
+      },
+      "flujo": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Insumos",
+            "detalle": "Información del proyecto y referencias comparables",
+            "etiqueta": "Paso 1",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Análisis con IA",
+            "detalle": "Integración, síntesis y contraste",
+            "etiqueta": "Paso 2",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Brechas y prioridades",
+            "detalle": "Identificación y plan de cierre",
+            "etiqueta": "Paso 3",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Validación técnica",
+            "detalle": "Revisión de especialistas y consolidación en el documento técnico",
+            "etiqueta": "Paso 4",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "confianza-media",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "cabecera": {
+        "nombre_tablero": "Tablero de preparación del documento técnico",
+        "meta_fecha": "2027-07-15"
+      },
+      "madurez_componentes": [
+        {
+          "componente": "Componente A · Descripción del proyecto",
+          "orden": 1,
+          "filas": 58,
+          "con_dato": 40,
+          "proyectadas": 8,
+          "pendientes": 6,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 68.96551724137932
+        },
+        {
+          "componente": "Componente B · Caracterización técnica",
+          "orden": 2,
+          "filas": 78,
+          "con_dato": 48,
+          "proyectadas": 14,
+          "pendientes": 10,
+          "brechas": 6,
+          "otros": 0,
+          "madurez_pct": 61.53846153846154
+        },
+        {
+          "componente": "Componente C · Información de soporte",
+          "orden": 3,
+          "filas": 52,
+          "con_dato": 28,
+          "proyectadas": 10,
+          "pendientes": 9,
+          "brechas": 5,
+          "otros": 0,
+          "madurez_pct": 53.84615384615385
+        },
+        {
+          "componente": "Componente D · Análisis de resultados",
+          "orden": 4,
+          "filas": 50,
+          "con_dato": 30,
+          "proyectadas": 9,
+          "pendientes": 7,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 60
+        },
+        {
+          "componente": "Componente E · Planes de acción y seguimiento",
+          "orden": 5,
+          "filas": 52,
+          "con_dato": 22,
+          "proyectadas": 12,
+          "pendientes": 10,
+          "brechas": 8,
+          "otros": 0,
+          "madurez_pct": 42.30769230769231
+        }
+      ],
+      "preparacion": {
+        "preparacion_pct": 57.331564986737405,
+        "componentes": 5
+      },
+      "confianza": {
+        "orden": 1,
+        "titulo": "Confianza en la fecha",
+        "detalle": "La fecha meta es alcanzable si se cierran a tiempo las brechas de prioridad alta (texto sintético).",
+        "etiqueta": "Media",
+        "mes": null,
+        "valor": null
+      },
+      "base_informacion": {
+        "total": 156,
+        "clases": [
+          {
+            "clase": "primaria",
+            "insumos": 87
+          },
+          {
+            "clase": "secundaria",
+            "insumos": 46
+          },
+          {
+            "clase": "brecha",
+            "insumos": 23
+          }
+        ]
+      },
+      "brechas_criticas": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Definición pendiente de los supuestos de diseño del componente principal",
+            "detalle": "Condiciona la descripción del proyecto y su alcance técnico (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Modelo de referencia sin calibrar con la segunda campaña de campo",
+            "detalle": "Afecta el análisis de resultados y su cronograma (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Información secundaria incompleta para un frente de caracterización",
+            "detalle": "Se cubre con proyección mientras llega el insumo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Acuerdos de acceso para la campaña de campo de temporada",
+            "detalle": "Puede correr la campaña de campo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      },
+      "prioridades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Cierre de supuestos de diseño y alcance del trabajo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Calibración del modelo de referencia con datos de campo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Acuerdos de acceso para la campaña de temporada",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2027-01-01",
+            "valor": null
+          }
+        ]
+      },
+      "capacidades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Síntesis de estudios",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Contraste con proyectos comparables",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Identificación de brechas",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Borradores por capítulo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          }
+        ],
+        "aceleracion": null
+      },
+      "flujo": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Insumos",
+            "detalle": "Información del proyecto y referencias comparables",
+            "etiqueta": "Paso 1",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Análisis con IA",
+            "detalle": "Integración, síntesis y contraste",
+            "etiqueta": "Paso 2",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Brechas y prioridades",
+            "detalle": "Identificación y plan de cierre",
+            "etiqueta": "Paso 3",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Validación técnica",
+            "detalle": "Revisión de especialistas y consolidación en el documento técnico",
+            "etiqueta": "Paso 4",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "confianza-alta",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "cabecera": {
+        "nombre_tablero": "Tablero de preparación del documento técnico",
+        "meta_fecha": "2027-07-15"
+      },
+      "madurez_componentes": [
+        {
+          "componente": "Componente A · Descripción del proyecto",
+          "orden": 1,
+          "filas": 58,
+          "con_dato": 40,
+          "proyectadas": 8,
+          "pendientes": 6,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 68.96551724137932
+        },
+        {
+          "componente": "Componente B · Caracterización técnica",
+          "orden": 2,
+          "filas": 78,
+          "con_dato": 48,
+          "proyectadas": 14,
+          "pendientes": 10,
+          "brechas": 6,
+          "otros": 0,
+          "madurez_pct": 61.53846153846154
+        },
+        {
+          "componente": "Componente C · Información de soporte",
+          "orden": 3,
+          "filas": 52,
+          "con_dato": 28,
+          "proyectadas": 10,
+          "pendientes": 9,
+          "brechas": 5,
+          "otros": 0,
+          "madurez_pct": 53.84615384615385
+        },
+        {
+          "componente": "Componente D · Análisis de resultados",
+          "orden": 4,
+          "filas": 50,
+          "con_dato": 30,
+          "proyectadas": 9,
+          "pendientes": 7,
+          "brechas": 4,
+          "otros": 0,
+          "madurez_pct": 60
+        },
+        {
+          "componente": "Componente E · Planes de acción y seguimiento",
+          "orden": 5,
+          "filas": 52,
+          "con_dato": 22,
+          "proyectadas": 12,
+          "pendientes": 10,
+          "brechas": 8,
+          "otros": 0,
+          "madurez_pct": 42.30769230769231
+        }
+      ],
+      "preparacion": {
+        "preparacion_pct": 57.331564986737405,
+        "componentes": 5
+      },
+      "confianza": {
+        "orden": 1,
+        "titulo": "Confianza en la fecha",
+        "detalle": "El avance de este corte sostiene la fecha meta con el plan vigente (texto sintético).",
+        "etiqueta": "Alta",
+        "mes": null,
+        "valor": null
+      },
+      "base_informacion": {
+        "total": 156,
+        "clases": [
+          {
+            "clase": "primaria",
+            "insumos": 87
+          },
+          {
+            "clase": "secundaria",
+            "insumos": 46
+          },
+          {
+            "clase": "brecha",
+            "insumos": 23
+          }
+        ]
+      },
+      "brechas_criticas": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Definición pendiente de los supuestos de diseño del componente principal",
+            "detalle": "Condiciona la descripción del proyecto y su alcance técnico (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Modelo de referencia sin calibrar con la segunda campaña de campo",
+            "detalle": "Afecta el análisis de resultados y su cronograma (sintético).",
+            "etiqueta": "Alta",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Información secundaria incompleta para un frente de caracterización",
+            "detalle": "Se cubre con proyección mientras llega el insumo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Acuerdos de acceso para la campaña de campo de temporada",
+            "detalle": "Puede correr la campaña de campo (sintético).",
+            "etiqueta": "Media",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      },
+      "prioridades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Cierre de supuestos de diseño y alcance del trabajo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Calibración del modelo de referencia con datos de campo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2026-12-01",
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Acuerdos de acceso para la campaña de temporada",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": "2027-01-01",
+            "valor": null
+          }
+        ]
+      },
+      "capacidades": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Síntesis de estudios",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Contraste con proyectos comparables",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Identificación de brechas",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Borradores por capítulo",
+            "detalle": null,
+            "etiqueta": null,
+            "mes": null,
+            "valor": null
+          }
+        ],
+        "aceleracion": null
+      },
+      "flujo": {
+        "items": [
+          {
+            "orden": 1,
+            "titulo": "Insumos",
+            "detalle": "Información del proyecto y referencias comparables",
+            "etiqueta": "Paso 1",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 2,
+            "titulo": "Análisis con IA",
+            "detalle": "Integración, síntesis y contraste",
+            "etiqueta": "Paso 2",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 3,
+            "titulo": "Brechas y prioridades",
+            "detalle": "Identificación y plan de cierre",
+            "etiqueta": "Paso 3",
+            "mes": null,
+            "valor": null
+          },
+          {
+            "orden": 4,
+            "titulo": "Validación técnica",
+            "detalle": "Revisión de especialistas y consolidación en el documento técnico",
+            "etiqueta": "Paso 4",
+            "mes": null,
+            "valor": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "cabecera": {
+        "nombre_tablero": "Tablero de preparación del documento técnico",
+        "meta_fecha": "2027-07-15"
+      },
+      "madurez_componentes": [],
+      "preparacion": null,
+      "confianza": null,
+      "base_informacion": null,
+      "brechas_criticas": {
+        "items": []
+      },
+      "prioridades": {
+        "items": []
+      },
+      "capacidades": {
+        "items": [],
+        "aceleracion": null
+      },
+      "flujo": {
+        "items": []
+      }
+    }
+  ],
+  "seguimiento-contador": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "contador": {
+        "inicio_proyecto": "2026-08-03",
+        "fecha_base": "2027-07-02",
+        "fecha_proyectada": "2027-08-24",
+        "impacto_max": 33.6,
+        "causa_principal": "Validación de supuestos técnicos",
+        "dias_a_base": 242,
+        "dias_a_proyectada": 295,
+        "corrimiento_habiles": 34,
+        "calendario": "lv_festivos"
+      },
+      "criticos": [
+        {
+          "puesto": 1,
+          "edt": "2.1",
+          "nombre": "Validación de supuestos técnicos",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "vencida",
+          "atraso_dias": 33.6,
+          "holgura_total": 0,
+          "impacto": 33.6,
+          "fin_base": "2026-10-16"
+        },
+        {
+          "puesto": 2,
+          "edt": "1.1",
+          "nombre": "Análisis de variables de diseño",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 34.3,
+          "holgura_total": 1,
+          "impacto": 33.3,
+          "fin_base": "2026-08-28"
+        },
+        {
+          "puesto": 3,
+          "edt": "1.2",
+          "nombre": "Validación de resultados parciales",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 28.7,
+          "holgura_total": 2,
+          "impacto": 26.7,
+          "fin_base": "2026-09-11"
+        },
+        {
+          "puesto": 4,
+          "edt": "1.3",
+          "nombre": "Integración de la información temática",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 23.3,
+          "holgura_total": 3,
+          "impacto": 20.3,
+          "fin_base": "2026-09-29"
+        },
+        {
+          "puesto": 5,
+          "edt": "3.1",
+          "nombre": "Integración de resultados parciales",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "vencida",
+          "atraso_dias": 20.5,
+          "holgura_total": 1,
+          "impacto": 19.5,
+          "fin_base": "2026-10-02"
+        },
+        {
+          "puesto": 6,
+          "edt": "2.2",
+          "nombre": "Integración del modelo de referencia",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "atrasada",
+          "atraso_dias": 15.9,
+          "holgura_total": 1,
+          "impacto": 14.9,
+          "fin_base": "2026-11-27"
+        },
+        {
+          "puesto": 7,
+          "edt": "1.4",
+          "nombre": "Revisión de la información secundaria",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 17,
+          "holgura_total": 3,
+          "impacto": 14,
+          "fin_base": "2026-10-15"
+        },
+        {
+          "puesto": 8,
+          "edt": "4.1",
+          "nombre": "Revisión del modelo de referencia",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "vencida",
+          "atraso_dias": 9.1,
+          "holgura_total": 1,
+          "impacto": 8.1,
+          "fin_base": "2026-10-21"
+        },
+        {
+          "puesto": 9,
+          "edt": "1.5",
+          "nombre": "Ajuste de insumos base",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 12.3,
+          "holgura_total": 4.5,
+          "impacto": 7.800000000000001,
+          "fin_base": "2026-10-30"
+        },
+        {
+          "puesto": 10,
+          "edt": "3.2",
+          "nombre": "Revisión de la información temática",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "vencida",
+          "atraso_dias": 7.3,
+          "holgura_total": 2,
+          "impacto": 5.3,
+          "fin_base": "2026-10-30"
+        }
+      ],
+      "simulador": {
+        "r_min": 0,
+        "r_max": 1,
+        "d_min": -30,
+        "d_max": 30,
+        "habiles_desde_base": [
+          {
+            "k": -30,
+            "fecha": "2027-05-19"
+          },
+          {
+            "k": -29,
+            "fecha": "2027-05-20"
+          },
+          {
+            "k": -28,
+            "fecha": "2027-05-21"
+          },
+          {
+            "k": -27,
+            "fecha": "2027-05-24"
+          },
+          {
+            "k": -26,
+            "fecha": "2027-05-25"
+          },
+          {
+            "k": -25,
+            "fecha": "2027-05-26"
+          },
+          {
+            "k": -24,
+            "fecha": "2027-05-27"
+          },
+          {
+            "k": -23,
+            "fecha": "2027-05-28"
+          },
+          {
+            "k": -22,
+            "fecha": "2027-06-01"
+          },
+          {
+            "k": -21,
+            "fecha": "2027-06-02"
+          },
+          {
+            "k": -20,
+            "fecha": "2027-06-03"
+          },
+          {
+            "k": -19,
+            "fecha": "2027-06-04"
+          },
+          {
+            "k": -18,
+            "fecha": "2027-06-08"
+          },
+          {
+            "k": -17,
+            "fecha": "2027-06-09"
+          },
+          {
+            "k": -16,
+            "fecha": "2027-06-10"
+          },
+          {
+            "k": -15,
+            "fecha": "2027-06-11"
+          },
+          {
+            "k": -14,
+            "fecha": "2027-06-14"
+          },
+          {
+            "k": -13,
+            "fecha": "2027-06-15"
+          },
+          {
+            "k": -12,
+            "fecha": "2027-06-16"
+          },
+          {
+            "k": -11,
+            "fecha": "2027-06-17"
+          },
+          {
+            "k": -10,
+            "fecha": "2027-06-18"
+          },
+          {
+            "k": -9,
+            "fecha": "2027-06-21"
+          },
+          {
+            "k": -8,
+            "fecha": "2027-06-22"
+          },
+          {
+            "k": -7,
+            "fecha": "2027-06-23"
+          },
+          {
+            "k": -6,
+            "fecha": "2027-06-24"
+          },
+          {
+            "k": -5,
+            "fecha": "2027-06-25"
+          },
+          {
+            "k": -4,
+            "fecha": "2027-06-28"
+          },
+          {
+            "k": -3,
+            "fecha": "2027-06-29"
+          },
+          {
+            "k": -2,
+            "fecha": "2027-06-30"
+          },
+          {
+            "k": -1,
+            "fecha": "2027-07-01"
+          },
+          {
+            "k": 0,
+            "fecha": "2027-07-02"
+          },
+          {
+            "k": 1,
+            "fecha": "2027-07-06"
+          },
+          {
+            "k": 2,
+            "fecha": "2027-07-07"
+          },
+          {
+            "k": 3,
+            "fecha": "2027-07-08"
+          },
+          {
+            "k": 4,
+            "fecha": "2027-07-09"
+          },
+          {
+            "k": 5,
+            "fecha": "2027-07-12"
+          },
+          {
+            "k": 6,
+            "fecha": "2027-07-13"
+          },
+          {
+            "k": 7,
+            "fecha": "2027-07-14"
+          },
+          {
+            "k": 8,
+            "fecha": "2027-07-15"
+          },
+          {
+            "k": 9,
+            "fecha": "2027-07-16"
+          },
+          {
+            "k": 10,
+            "fecha": "2027-07-19"
+          },
+          {
+            "k": 11,
+            "fecha": "2027-07-21"
+          },
+          {
+            "k": 12,
+            "fecha": "2027-07-22"
+          },
+          {
+            "k": 13,
+            "fecha": "2027-07-23"
+          },
+          {
+            "k": 14,
+            "fecha": "2027-07-26"
+          },
+          {
+            "k": 15,
+            "fecha": "2027-07-27"
+          },
+          {
+            "k": 16,
+            "fecha": "2027-07-28"
+          },
+          {
+            "k": 17,
+            "fecha": "2027-07-29"
+          },
+          {
+            "k": 18,
+            "fecha": "2027-07-30"
+          },
+          {
+            "k": 19,
+            "fecha": "2027-08-02"
+          },
+          {
+            "k": 20,
+            "fecha": "2027-08-03"
+          },
+          {
+            "k": 21,
+            "fecha": "2027-08-04"
+          },
+          {
+            "k": 22,
+            "fecha": "2027-08-05"
+          },
+          {
+            "k": 23,
+            "fecha": "2027-08-06"
+          },
+          {
+            "k": 24,
+            "fecha": "2027-08-09"
+          },
+          {
+            "k": 25,
+            "fecha": "2027-08-10"
+          },
+          {
+            "k": 26,
+            "fecha": "2027-08-11"
+          },
+          {
+            "k": 27,
+            "fecha": "2027-08-12"
+          },
+          {
+            "k": 28,
+            "fecha": "2027-08-13"
+          },
+          {
+            "k": 29,
+            "fecha": "2027-08-17"
+          },
+          {
+            "k": 30,
+            "fecha": "2027-08-18"
+          },
+          {
+            "k": 31,
+            "fecha": "2027-08-19"
+          },
+          {
+            "k": 32,
+            "fecha": "2027-08-20"
+          },
+          {
+            "k": 33,
+            "fecha": "2027-08-23"
+          },
+          {
+            "k": 34,
+            "fecha": "2027-08-24"
+          },
+          {
+            "k": 35,
+            "fecha": "2027-08-25"
+          },
+          {
+            "k": 36,
+            "fecha": "2027-08-26"
+          },
+          {
+            "k": 37,
+            "fecha": "2027-08-27"
+          },
+          {
+            "k": 38,
+            "fecha": "2027-08-30"
+          },
+          {
+            "k": 39,
+            "fecha": "2027-08-31"
+          },
+          {
+            "k": 40,
+            "fecha": "2027-09-01"
+          },
+          {
+            "k": 41,
+            "fecha": "2027-09-02"
+          },
+          {
+            "k": 42,
+            "fecha": "2027-09-03"
+          },
+          {
+            "k": 43,
+            "fecha": "2027-09-06"
+          },
+          {
+            "k": 44,
+            "fecha": "2027-09-07"
+          },
+          {
+            "k": 45,
+            "fecha": "2027-09-08"
+          },
+          {
+            "k": 46,
+            "fecha": "2027-09-09"
+          },
+          {
+            "k": 47,
+            "fecha": "2027-09-10"
+          },
+          {
+            "k": 48,
+            "fecha": "2027-09-13"
+          },
+          {
+            "k": 49,
+            "fecha": "2027-09-14"
+          },
+          {
+            "k": 50,
+            "fecha": "2027-09-15"
+          },
+          {
+            "k": 51,
+            "fecha": "2027-09-16"
+          },
+          {
+            "k": 52,
+            "fecha": "2027-09-17"
+          },
+          {
+            "k": 53,
+            "fecha": "2027-09-20"
+          },
+          {
+            "k": 54,
+            "fecha": "2027-09-21"
+          },
+          {
+            "k": 55,
+            "fecha": "2027-09-22"
+          },
+          {
+            "k": 56,
+            "fecha": "2027-09-23"
+          },
+          {
+            "k": 57,
+            "fecha": "2027-09-24"
+          },
+          {
+            "k": 58,
+            "fecha": "2027-09-27"
+          },
+          {
+            "k": 59,
+            "fecha": "2027-09-28"
+          },
+          {
+            "k": 60,
+            "fecha": "2027-09-29"
+          },
+          {
+            "k": 61,
+            "fecha": "2027-09-30"
+          },
+          {
+            "k": 62,
+            "fecha": "2027-10-01"
+          },
+          {
+            "k": 63,
+            "fecha": "2027-10-04"
+          },
+          {
+            "k": 64,
+            "fecha": "2027-10-05"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "contador": null,
+      "criticos": [],
+      "simulador": null
+    }
+  ],
+  "seguimiento-indicadores": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "spi": {
+        "valor": 0.5582835708121927,
+        "estado": "critico",
+        "spi_verde": 0.95,
+        "spi_ambar": 0.85
+      },
+      "avance": {
+        "real_pct": 12.168844011142061,
+        "plan_pct": 21.796887186629526,
+        "desviacion_pp": -9.628043175487464
+      },
+      "tiempo": {
+        "tiempo_consumido_pct": 27.232142857142858,
+        "plan_pct": 21.796887186629526,
+        "real_pct": 12.168844011142061
+      },
+      "actividades": {
+        "total": 65,
+        "vencidas": 9,
+        "atrasadas": 2,
+        "en_curso": 3,
+        "completadas": 1,
+        "por_iniciar": 50,
+        "retraso_ruta_critica": 1,
+        "umbral_atraso_pp": 10
+      }
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "spi": null,
+      "avance": null,
+      "tiempo": null,
+      "actividades": null
+    }
+  ],
+  "seguimiento-fecha": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "serie": [
+        {
+          "corte_id": 1,
+          "fecha_corte": "2026-10-05",
+          "fecha_base": "2027-07-02",
+          "fecha_proyectada": "2027-08-10"
+        },
+        {
+          "corte_id": 2,
+          "fecha_corte": "2026-10-19",
+          "fecha_base": "2027-07-02",
+          "fecha_proyectada": "2027-08-18"
+        },
+        {
+          "corte_id": 3,
+          "fecha_corte": "2026-11-02",
+          "fecha_base": "2027-07-02",
+          "fecha_proyectada": "2027-08-24"
+        }
+      ],
+      "extrapolacion_sin_avance": [
+        {
+          "fecha_eje": "2026-11-02",
+          "fecha_proyectada": "2027-08-24"
+        },
+        {
+          "fecha_eje": "2026-11-09",
+          "fecha_proyectada": "2027-08-31"
+        },
+        {
+          "fecha_eje": "2026-11-16",
+          "fecha_proyectada": "2027-09-06"
+        },
+        {
+          "fecha_eje": "2026-11-23",
+          "fecha_proyectada": "2027-09-13"
+        },
+        {
+          "fecha_eje": "2026-11-30",
+          "fecha_proyectada": "2027-09-20"
+        },
+        {
+          "fecha_eje": "2026-12-07",
+          "fecha_proyectada": "2027-09-27"
+        },
+        {
+          "fecha_eje": "2026-12-14",
+          "fecha_proyectada": "2027-10-01"
+        },
+        {
+          "fecha_eje": "2026-12-21",
+          "fecha_proyectada": "2027-10-08"
+        },
+        {
+          "fecha_eje": "2026-12-28",
+          "fecha_proyectada": "2027-10-14"
+        },
+        {
+          "fecha_eje": "2027-01-04",
+          "fecha_proyectada": "2027-10-21"
+        },
+        {
+          "fecha_eje": "2027-01-11",
+          "fecha_proyectada": "2027-10-27"
+        },
+        {
+          "fecha_eje": "2027-01-18",
+          "fecha_proyectada": "2027-11-04"
+        },
+        {
+          "fecha_eje": "2027-01-25",
+          "fecha_proyectada": "2027-11-11"
+        },
+        {
+          "fecha_eje": "2027-02-01",
+          "fecha_proyectada": "2027-11-19"
+        },
+        {
+          "fecha_eje": "2027-02-08",
+          "fecha_proyectada": "2027-11-26"
+        },
+        {
+          "fecha_eje": "2027-02-15",
+          "fecha_proyectada": "2027-12-03"
+        },
+        {
+          "fecha_eje": "2027-02-22",
+          "fecha_proyectada": "2027-12-13"
+        },
+        {
+          "fecha_eje": "2027-03-01",
+          "fecha_proyectada": "2027-12-20"
+        },
+        {
+          "fecha_eje": "2027-03-08",
+          "fecha_proyectada": "2027-12-27"
+        },
+        {
+          "fecha_eje": "2027-03-15",
+          "fecha_proyectada": "2028-01-03"
+        },
+        {
+          "fecha_eje": "2027-03-22",
+          "fecha_proyectada": "2028-01-07"
+        },
+        {
+          "fecha_eje": "2027-03-29",
+          "fecha_proyectada": "2028-01-13"
+        },
+        {
+          "fecha_eje": "2027-04-05",
+          "fecha_proyectada": "2028-01-20"
+        },
+        {
+          "fecha_eje": "2027-04-12",
+          "fecha_proyectada": "2028-01-27"
+        },
+        {
+          "fecha_eje": "2027-04-19",
+          "fecha_proyectada": "2028-02-03"
+        },
+        {
+          "fecha_eje": "2027-04-26",
+          "fecha_proyectada": "2028-02-10"
+        },
+        {
+          "fecha_eje": "2027-05-03",
+          "fecha_proyectada": "2028-02-17"
+        },
+        {
+          "fecha_eje": "2027-05-10",
+          "fecha_proyectada": "2028-02-23"
+        },
+        {
+          "fecha_eje": "2027-05-17",
+          "fecha_proyectada": "2028-03-01"
+        },
+        {
+          "fecha_eje": "2027-05-24",
+          "fecha_proyectada": "2028-03-08"
+        },
+        {
+          "fecha_eje": "2027-05-31",
+          "fecha_proyectada": "2028-03-14"
+        },
+        {
+          "fecha_eje": "2027-06-07",
+          "fecha_proyectada": "2028-03-21"
+        },
+        {
+          "fecha_eje": "2027-06-14",
+          "fecha_proyectada": "2028-03-28"
+        },
+        {
+          "fecha_eje": "2027-06-21",
+          "fecha_proyectada": "2028-04-04"
+        },
+        {
+          "fecha_eje": "2027-06-28",
+          "fecha_proyectada": "2028-04-11"
+        }
+      ]
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "serie": [],
+      "extrapolacion_sin_avance": []
+    }
+  ],
+  "seguimiento-curva-s": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "plan": [
+        {
+          "semana": "2026-08-03",
+          "plan_acum_pct": 0.06963788300835655
+        },
+        {
+          "semana": "2026-08-10",
+          "plan_acum_pct": 0.34818941504178275
+        },
+        {
+          "semana": "2026-08-17",
+          "plan_acum_pct": 0.9052924791086351
+        },
+        {
+          "semana": "2026-08-24",
+          "plan_acum_pct": 2.0891364902506964
+        },
+        {
+          "semana": "2026-08-31",
+          "plan_acum_pct": 3.4122562674094707
+        },
+        {
+          "semana": "2026-09-07",
+          "plan_acum_pct": 4.805013927576602
+        },
+        {
+          "semana": "2026-09-14",
+          "plan_acum_pct": 6.476323119777159
+        },
+        {
+          "semana": "2026-09-21",
+          "plan_acum_pct": 8.07799442896936
+        },
+        {
+          "semana": "2026-09-28",
+          "plan_acum_pct": 10.515320334261839
+        },
+        {
+          "semana": "2026-10-05",
+          "plan_acum_pct": 12.674094707520892
+        },
+        {
+          "semana": "2026-10-12",
+          "plan_acum_pct": 14.832869080779945
+        },
+        {
+          "semana": "2026-10-19",
+          "plan_acum_pct": 17.479108635097493
+        },
+        {
+          "semana": "2026-10-26",
+          "plan_acum_pct": 19.846796657381617
+        },
+        {
+          "semana": "2026-11-02",
+          "plan_acum_pct": 21.7966573816156
+        },
+        {
+          "semana": "2026-11-09",
+          "plan_acum_pct": 24.37325905292479
+        },
+        {
+          "semana": "2026-11-16",
+          "plan_acum_pct": 26.880222841225628
+        },
+        {
+          "semana": "2026-11-23",
+          "plan_acum_pct": 29.526462395543174
+        },
+        {
+          "semana": "2026-11-30",
+          "plan_acum_pct": 32.31197771587744
+        },
+        {
+          "semana": "2026-12-07",
+          "plan_acum_pct": 34.749303621169915
+        },
+        {
+          "semana": "2026-12-14",
+          "plan_acum_pct": 36.629526462395546
+        },
+        {
+          "semana": "2026-12-21",
+          "plan_acum_pct": 39.41504178272981
+        },
+        {
+          "semana": "2026-12-28",
+          "plan_acum_pct": 41.22562674094708
+        },
+        {
+          "semana": "2027-01-04",
+          "plan_acum_pct": 43.1058495821727
+        },
+        {
+          "semana": "2027-01-11",
+          "plan_acum_pct": 45.05571030640669
+        },
+        {
+          "semana": "2027-01-18",
+          "plan_acum_pct": 47.353760445682454
+        },
+        {
+          "semana": "2027-01-25",
+          "plan_acum_pct": 50
+        },
+        {
+          "semana": "2027-02-01",
+          "plan_acum_pct": 52.71587743732591
+        },
+        {
+          "semana": "2027-02-08",
+          "plan_acum_pct": 55.43175487465181
+        },
+        {
+          "semana": "2027-02-15",
+          "plan_acum_pct": 58.35654596100279
+        },
+        {
+          "semana": "2027-02-22",
+          "plan_acum_pct": 61.420612813370475
+        },
+        {
+          "semana": "2027-03-01",
+          "plan_acum_pct": 64.06685236768803
+        },
+        {
+          "semana": "2027-03-08",
+          "plan_acum_pct": 66.57381615598885
+        },
+        {
+          "semana": "2027-03-15",
+          "plan_acum_pct": 69.15041782729806
+        },
+        {
+          "semana": "2027-03-22",
+          "plan_acum_pct": 71.93593314763231
+        },
+        {
+          "semana": "2027-03-29",
+          "plan_acum_pct": 74.16434540389972
+        },
+        {
+          "semana": "2027-04-05",
+          "plan_acum_pct": 76.53203342618384
+        },
+        {
+          "semana": "2027-04-12",
+          "plan_acum_pct": 78.6908077994429
+        },
+        {
+          "semana": "2027-04-19",
+          "plan_acum_pct": 81.54596100278552
+        },
+        {
+          "semana": "2027-04-26",
+          "plan_acum_pct": 84.81894150417827
+        },
+        {
+          "semana": "2027-05-03",
+          "plan_acum_pct": 87.04735376044569
+        },
+        {
+          "semana": "2027-05-10",
+          "plan_acum_pct": 89.27576601671309
+        },
+        {
+          "semana": "2027-05-17",
+          "plan_acum_pct": 91.78272980501393
+        },
+        {
+          "semana": "2027-05-24",
+          "plan_acum_pct": 94.08077994428969
+        },
+        {
+          "semana": "2027-05-31",
+          "plan_acum_pct": 95.75208913649026
+        },
+        {
+          "semana": "2027-06-07",
+          "plan_acum_pct": 96.58774373259052
+        },
+        {
+          "semana": "2027-06-14",
+          "plan_acum_pct": 97.84122562674095
+        },
+        {
+          "semana": "2027-06-21",
+          "plan_acum_pct": 98.81615598885794
+        },
+        {
+          "semana": "2027-06-28",
+          "plan_acum_pct": 99.5125348189415
+        }
+      ],
+      "real": [
+        {
+          "corte_id": 1,
+          "fecha_corte": "2026-10-05",
+          "real_pct": 6.374679665738162,
+          "plan_pct": 12.674073816155989
+        },
+        {
+          "corte_id": 2,
+          "fecha_corte": "2026-10-19",
+          "real_pct": 9.380236768802229,
+          "plan_pct": 17.479164345403902
+        },
+        {
+          "corte_id": 3,
+          "fecha_corte": "2026-11-02",
+          "real_pct": 12.168844011142061,
+          "plan_pct": 21.796887186629526
+        }
+      ]
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "plan": [],
+      "real": []
+    }
+  ],
+  "seguimiento-frentes": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "umbrales": {
+        "umbral_atraso_pp": 10,
+        "umbral_ambar_pp": 5
+      },
+      "atraso_por_frente": [
+        {
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "ventana_inicio": "2026-08-03",
+          "ventana_fin": "2026-12-18",
+          "real_pct": 20.392205882352943,
+          "plan_pct": 67.6470588235294,
+          "desviacion_pp": -47.254852941176466
+        },
+        {
+          "frente": "Frente 2 · Información técnica de base",
+          "ventana_inicio": "2026-08-10",
+          "ventana_fin": "2027-06-25",
+          "real_pct": 9.527133956386294,
+          "plan_pct": 23.364548286604364,
+          "desviacion_pp": -13.83741433021807
+        },
+        {
+          "frente": "Frente 3 · Trabajo de campo",
+          "ventana_inicio": "2026-08-18",
+          "ventana_fin": "2027-05-28",
+          "real_pct": 18.80342756183746,
+          "plan_pct": 26.148621908127208,
+          "desviacion_pp": -7.345194346289748
+        },
+        {
+          "frente": "Frente 4 · Modelación técnica",
+          "ventana_inicio": "2026-09-01",
+          "ventana_fin": "2027-03-26",
+          "real_pct": 22.8489,
+          "plan_pct": 27.000799999999998,
+          "desviacion_pp": -4.151899999999998
+        },
+        {
+          "frente": "Frente 5 · Caracterización técnica",
+          "ventana_inicio": "2026-10-05",
+          "ventana_fin": "2027-05-21",
+          "real_pct": 7.962545454545453,
+          "plan_pct": 8.182227272727273,
+          "desviacion_pp": -0.21968181818181964
+        }
+      ],
+      "avance_por_frente": [
+        {
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "ventana_inicio": "2026-08-03",
+          "ventana_fin": "2026-12-18",
+          "real_pct": 20.392205882352943,
+          "plan_pct": 67.6470588235294,
+          "desviacion_pp": -47.254852941176466
+        },
+        {
+          "frente": "Frente 2 · Información técnica de base",
+          "ventana_inicio": "2026-08-10",
+          "ventana_fin": "2027-06-25",
+          "real_pct": 9.527133956386294,
+          "plan_pct": 23.364548286604364,
+          "desviacion_pp": -13.83741433021807
+        },
+        {
+          "frente": "Frente 3 · Trabajo de campo",
+          "ventana_inicio": "2026-08-18",
+          "ventana_fin": "2027-05-28",
+          "real_pct": 18.80342756183746,
+          "plan_pct": 26.148621908127208,
+          "desviacion_pp": -7.345194346289748
+        },
+        {
+          "frente": "Frente 4 · Modelación técnica",
+          "ventana_inicio": "2026-09-01",
+          "ventana_fin": "2027-03-26",
+          "real_pct": 22.8489,
+          "plan_pct": 27.000799999999998,
+          "desviacion_pp": -4.151899999999998
+        },
+        {
+          "frente": "Frente 5 · Caracterización técnica",
+          "ventana_inicio": "2026-10-05",
+          "ventana_fin": "2027-05-21",
+          "real_pct": 7.962545454545453,
+          "plan_pct": 8.182227272727273,
+          "desviacion_pp": -0.21968181818181964
+        },
+        {
+          "frente": "Frente 6 · Análisis de resultados",
+          "ventana_inicio": "2027-01-12",
+          "ventana_fin": "2027-05-14",
+          "real_pct": 0,
+          "plan_pct": 0,
+          "desviacion_pp": 0
+        },
+        {
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "ventana_inicio": "2027-03-01",
+          "ventana_fin": "2027-06-11",
+          "real_pct": 0,
+          "plan_pct": 0,
+          "desviacion_pp": 0
+        },
+        {
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "ventana_inicio": "2027-05-03",
+          "ventana_fin": "2027-07-02",
+          "real_pct": 0,
+          "plan_pct": 0,
+          "desviacion_pp": 0
+        }
+      ]
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "umbrales": null,
+      "atraso_por_frente": [],
+      "avance_por_frente": []
+    }
+  ],
+  "seguimiento-hitos": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "hitos": [
+        {
+          "fecha": "2026-08-03",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Reunión de arranque"
+          ],
+          "estado": "cumplido"
+        },
+        {
+          "fecha": "2026-12-18",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 1"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-03-26",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 4"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-05-14",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 6"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-05-21",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 5"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-05-28",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 3"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-06-11",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 7"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-06-25",
+          "hitos": 1,
+          "nombres": [
+            "Hito · Entrega del frente 2"
+          ],
+          "estado": "por_venir"
+        },
+        {
+          "fecha": "2027-07-02",
+          "hitos": 3,
+          "nombres": [
+            "Hito · Entrega del frente 8",
+            "Hito · Aprobación de la base de datos",
+            "Hito · Entregable definitivo"
+          ],
+          "estado": "por_venir"
+        }
+      ]
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "hitos": []
+    }
+  ],
+  "detalle-actividades": [
+    {
+      "id": "base",
+      "corte": {
+        "corte_id": 3,
+        "fecha_corte": "2026-11-02"
+      },
+      "estados": [
+        {
+          "estado": "vencida",
+          "actividades": 9
+        },
+        {
+          "estado": "atrasada",
+          "actividades": 2
+        },
+        {
+          "estado": "en_curso",
+          "actividades": 3
+        },
+        {
+          "estado": "por_iniciar",
+          "actividades": 50
+        },
+        {
+          "estado": "completada",
+          "actividades": 1
+        }
+      ],
+      "total": 65,
+      "ventana_proximas": 14,
+      "frentes": [
+        "Frente 1 · Descripción técnica del proyecto",
+        "Frente 2 · Información técnica de base",
+        "Frente 3 · Trabajo de campo",
+        "Frente 4 · Modelación técnica",
+        "Frente 5 · Caracterización técnica",
+        "Frente 6 · Análisis de resultados",
+        "Frente 7 · Planes de acción y seguimiento",
+        "Frente 8 · Consolidación y entrega del documento"
+      ],
+      "actividades": [
+        {
+          "edt": "0.H1",
+          "nombre": "Hito · Reunión de arranque",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "completada",
+          "inicio_base": "2026-08-03",
+          "fin_base": "2026-08-03",
+          "avance_real": 100,
+          "avance_plan": 100,
+          "atraso_dias": 0,
+          "holgura_total": 30,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "1.1",
+          "nombre": "Análisis de variables de diseño",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "inicio_base": "2026-08-03",
+          "fin_base": "2026-08-28",
+          "avance_real": 27.77,
+          "avance_plan": 100,
+          "atraso_dias": 34.3,
+          "holgura_total": 1,
+          "impacto": 33.3,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.2",
+          "nombre": "Validación de resultados parciales",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "inicio_base": "2026-08-19",
+          "fin_base": "2026-09-11",
+          "avance_real": 31.09,
+          "avance_plan": 100,
+          "atraso_dias": 28.7,
+          "holgura_total": 2,
+          "impacto": 26.7,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.3",
+          "nombre": "Integración de la información temática",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "inicio_base": "2026-09-04",
+          "fin_base": "2026-09-29",
+          "avance_real": 27.91,
+          "avance_plan": 100,
+          "atraso_dias": 23.3,
+          "holgura_total": 3,
+          "impacto": 20.3,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.4",
+          "nombre": "Revisión de la información secundaria",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "inicio_base": "2026-09-21",
+          "fin_base": "2026-10-15",
+          "avance_real": 32.06,
+          "avance_plan": 100,
+          "atraso_dias": 17,
+          "holgura_total": 3,
+          "impacto": 14,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.5",
+          "nombre": "Ajuste de insumos base",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "inicio_base": "2026-10-06",
+          "fin_base": "2026-10-30",
+          "avance_real": 27.59,
+          "avance_plan": 100,
+          "atraso_dias": 12.3,
+          "holgura_total": 4.5,
+          "impacto": 7.800000000000001,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.6",
+          "nombre": "Síntesis de supuestos técnicos",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "atrasada",
+          "inicio_base": "2026-10-22",
+          "fin_base": "2026-11-13",
+          "avance_real": 12.28,
+          "avance_plan": 40,
+          "atraso_dias": 4.2,
+          "holgura_total": 6,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.7",
+          "nombre": "Cierre del modelo de referencia",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-09",
+          "fin_base": "2026-12-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 8,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.8",
+          "nombre": "Verificación de soportes de campo",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-23",
+          "fin_base": "2026-12-18",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 12,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "1.H",
+          "nombre": "Hito · Entrega del frente 1",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-12-18",
+          "fin_base": "2026-12-18",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 12,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "2.1",
+          "nombre": "Validación de supuestos técnicos",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "vencida",
+          "inicio_base": "2026-08-10",
+          "fin_base": "2026-10-16",
+          "avance_real": 39.23,
+          "avance_plan": 100,
+          "atraso_dias": 33.6,
+          "holgura_total": 0,
+          "impacto": 33.6,
+          "ruta_critica": true,
+          "hito": false
+        },
+        {
+          "edt": "2.2",
+          "nombre": "Integración del modelo de referencia",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "atrasada",
+          "inicio_base": "2026-09-21",
+          "fin_base": "2026-11-27",
+          "avance_real": 26.4,
+          "avance_plan": 60.87,
+          "atraso_dias": 15.9,
+          "holgura_total": 1,
+          "impacto": 14.9,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "2.3",
+          "nombre": "Revisión de soportes de campo",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-03",
+          "fin_base": "2027-01-08",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 4.5,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "2.4",
+          "nombre": "Ajuste del capítulo consolidado",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-12-14",
+          "fin_base": "2027-02-19",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 10,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "2.5",
+          "nombre": "Síntesis de variables de diseño",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-01-25",
+          "fin_base": "2027-04-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 25,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "2.6",
+          "nombre": "Cierre de resultados parciales",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-08",
+          "fin_base": "2027-05-14",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 40,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "2.7",
+          "nombre": "Verificación de la información temática",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-04-19",
+          "fin_base": "2027-06-25",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 60,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "2.H",
+          "nombre": "Hito · Entrega del frente 2",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-06-25",
+          "fin_base": "2027-06-25",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 60,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "3.1",
+          "nombre": "Integración de resultados parciales",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "vencida",
+          "inicio_base": "2026-08-18",
+          "fin_base": "2026-10-02",
+          "avance_real": 66.76,
+          "avance_plan": 100,
+          "atraso_dias": 20.5,
+          "holgura_total": 1,
+          "impacto": 19.5,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.2",
+          "nombre": "Revisión de la información temática",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "vencida",
+          "inicio_base": "2026-09-16",
+          "fin_base": "2026-10-30",
+          "avance_real": 76.33,
+          "avance_plan": 100,
+          "atraso_dias": 7.3,
+          "holgura_total": 2,
+          "impacto": 5.3,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.3",
+          "nombre": "Campaña de campo de temporada con nombre largo para probar el truncado de etiquetas",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "en_curso",
+          "inicio_base": "2026-10-16",
+          "fin_base": "2026-12-02",
+          "avance_real": 24.26,
+          "avance_plan": 32.26,
+          "atraso_dias": 2.5,
+          "holgura_total": 15,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.4",
+          "nombre": "Síntesis de insumos base",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-17",
+          "fin_base": "2026-12-31",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 30,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.5",
+          "nombre": "Cierre de supuestos técnicos",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-12-14",
+          "fin_base": "2027-01-29",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 45,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.6",
+          "nombre": "Verificación del modelo de referencia",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-01-12",
+          "fin_base": "2027-02-26",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 51,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.7",
+          "nombre": "Levantamiento de soportes de campo",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-02-11",
+          "fin_base": "2027-03-30",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 58,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.8",
+          "nombre": "Análisis del capítulo consolidado",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-12",
+          "fin_base": "2027-04-28",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 68,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.9",
+          "nombre": "Validación de variables de diseño",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-04-12",
+          "fin_base": "2027-05-28",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 71,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "3.H",
+          "nombre": "Hito · Entrega del frente 3",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-28",
+          "fin_base": "2027-05-28",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 71,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "4.1",
+          "nombre": "Revisión del modelo de referencia",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "vencida",
+          "inicio_base": "2026-09-01",
+          "fin_base": "2026-10-21",
+          "avance_real": 83.9,
+          "avance_plan": 100,
+          "atraso_dias": 9.1,
+          "holgura_total": 1,
+          "impacto": 8.1,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "4.2",
+          "nombre": "Ajuste de soportes de campo",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "en_curso",
+          "inicio_base": "2026-10-02",
+          "fin_base": "2026-11-20",
+          "avance_real": 51.04,
+          "avance_plan": 59.38,
+          "atraso_dias": 2.7,
+          "holgura_total": 5,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "4.3",
+          "nombre": "Síntesis del capítulo consolidado",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-03",
+          "fin_base": "2026-12-22",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 12,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "4.4",
+          "nombre": "Cierre de variables de diseño",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-12-04",
+          "fin_base": "2027-01-22",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 20,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "4.5",
+          "nombre": "Verificación de resultados parciales",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-01-04",
+          "fin_base": "2027-02-23",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 35,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "4.6",
+          "nombre": "Levantamiento de la información temática",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-02-04",
+          "fin_base": "2027-03-24",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 50,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "4.H",
+          "nombre": "Hito · Entrega del frente 4",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-26",
+          "fin_base": "2027-03-26",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 50,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "5.1",
+          "nombre": "Ajuste de la información temática",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "en_curso",
+          "inicio_base": "2026-10-05",
+          "fin_base": "2026-11-13",
+          "avance_real": 64.88,
+          "avance_plan": 66.67,
+          "atraso_dias": 0.5,
+          "holgura_total": 10,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.2",
+          "nombre": "Síntesis de la información secundaria",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-03",
+          "fin_base": "2026-12-11",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 20,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.3",
+          "nombre": "Cierre de insumos base",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-27",
+          "fin_base": "2027-01-08",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 30,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.4",
+          "nombre": "Verificación de supuestos técnicos",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-12-24",
+          "fin_base": "2027-02-04",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 40,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.5",
+          "nombre": "Levantamiento del modelo de referencia",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-01-19",
+          "fin_base": "2027-03-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 45,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.6",
+          "nombre": "Análisis de soportes de campo",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-02-15",
+          "fin_base": "2027-03-29",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 50,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.7",
+          "nombre": "Validación del capítulo consolidado",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-15",
+          "fin_base": "2027-04-23",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 55,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.8",
+          "nombre": "Integración de variables de diseño",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-04-09",
+          "fin_base": "2027-05-21",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 60,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "5.H",
+          "nombre": "Hito · Entrega del frente 5",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-21",
+          "fin_base": "2027-05-21",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 60,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "6.1",
+          "nombre": "Síntesis de soportes de campo",
+          "frente": "Frente 6 · Análisis de resultados",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-01-12",
+          "fin_base": "2027-02-15",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 5,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "6.2",
+          "nombre": "Cierre del capítulo consolidado",
+          "frente": "Frente 6 · Análisis de resultados",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-02-02",
+          "fin_base": "2027-03-09",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 10,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "6.3",
+          "nombre": "Verificación de variables de diseño",
+          "frente": "Frente 6 · Análisis de resultados",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-02-24",
+          "fin_base": "2027-03-31",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 15,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "6.4",
+          "nombre": "Levantamiento de resultados parciales",
+          "frente": "Frente 6 · Análisis de resultados",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-18",
+          "fin_base": "2027-04-22",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 20,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "6.5",
+          "nombre": "Análisis de la información temática",
+          "frente": "Frente 6 · Análisis de resultados",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-04-09",
+          "fin_base": "2027-05-14",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 25,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "6.H",
+          "nombre": "Hito · Entrega del frente 6",
+          "frente": "Frente 6 · Análisis de resultados",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-14",
+          "fin_base": "2027-05-14",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 25,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "7.1",
+          "nombre": "Cierre de la información secundaria",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-01",
+          "fin_base": "2027-03-24",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 4,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "7.2",
+          "nombre": "Verificación de insumos base",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-03-16",
+          "fin_base": "2027-04-09",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 8,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "7.3",
+          "nombre": "Levantamiento de supuestos técnicos",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-04-01",
+          "fin_base": "2027-04-26",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 12,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "7.4",
+          "nombre": "Análisis del modelo de referencia",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-04-16",
+          "fin_base": "2027-05-11",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 16,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "7.5",
+          "nombre": "Validación de soportes de campo",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-03",
+          "fin_base": "2027-05-27",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 20,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "7.6",
+          "nombre": "Integración del capítulo consolidado",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-17",
+          "fin_base": "2027-06-11",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 24,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "7.H",
+          "nombre": "Hito · Entrega del frente 7",
+          "frente": "Frente 7 · Planes de acción y seguimiento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-06-11",
+          "fin_base": "2027-06-11",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 24,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "8.1",
+          "nombre": "Verificación del capítulo consolidado",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-03",
+          "fin_base": "2027-05-20",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 0,
+          "impacto": 0,
+          "ruta_critica": true,
+          "hito": false
+        },
+        {
+          "edt": "8.2",
+          "nombre": "Levantamiento de variables de diseño",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-14",
+          "fin_base": "2027-05-28",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 0,
+          "impacto": 0,
+          "ruta_critica": true,
+          "hito": false
+        },
+        {
+          "edt": "8.3",
+          "nombre": "Análisis de resultados parciales",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-05-24",
+          "fin_base": "2027-06-10",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 0,
+          "impacto": 0,
+          "ruta_critica": true,
+          "hito": false
+        },
+        {
+          "edt": "8.4",
+          "nombre": "Validación de la información temática",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-06-04",
+          "fin_base": "2027-06-21",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 2,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "8.5",
+          "nombre": "Integración de la información secundaria",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-06-15",
+          "fin_base": "2027-07-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 4,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": false
+        },
+        {
+          "edt": "8.H",
+          "nombre": "Hito · Entrega del frente 8",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-07-02",
+          "fin_base": "2027-07-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 4,
+          "impacto": 0,
+          "ruta_critica": false,
+          "hito": true
+        },
+        {
+          "edt": "8.H2",
+          "nombre": "Hito · Aprobación de la base de datos",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-07-02",
+          "fin_base": "2027-07-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 0,
+          "impacto": 0,
+          "ruta_critica": true,
+          "hito": true
+        },
+        {
+          "edt": "8.H3",
+          "nombre": "Hito · Entregable definitivo",
+          "frente": "Frente 8 · Consolidación y entrega del documento",
+          "estado": "por_iniciar",
+          "inicio_base": "2027-07-02",
+          "fin_base": "2027-07-02",
+          "avance_real": 0,
+          "avance_plan": 0,
+          "atraso_dias": 0,
+          "holgura_total": 0,
+          "impacto": 0,
+          "ruta_critica": true,
+          "hito": true
+        }
+      ],
+      "mueven_fecha": [
+        {
+          "edt": "2.1",
+          "nombre": "Validación de supuestos técnicos",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "vencida",
+          "atraso_dias": 33.6,
+          "holgura_total": 0,
+          "impacto": 33.6
+        },
+        {
+          "edt": "1.1",
+          "nombre": "Análisis de variables de diseño",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 34.3,
+          "holgura_total": 1,
+          "impacto": 33.3
+        },
+        {
+          "edt": "1.2",
+          "nombre": "Validación de resultados parciales",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 28.7,
+          "holgura_total": 2,
+          "impacto": 26.7
+        },
+        {
+          "edt": "1.3",
+          "nombre": "Integración de la información temática",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 23.3,
+          "holgura_total": 3,
+          "impacto": 20.3
+        },
+        {
+          "edt": "3.1",
+          "nombre": "Integración de resultados parciales",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "vencida",
+          "atraso_dias": 20.5,
+          "holgura_total": 1,
+          "impacto": 19.5
+        },
+        {
+          "edt": "2.2",
+          "nombre": "Integración del modelo de referencia",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "atrasada",
+          "atraso_dias": 15.9,
+          "holgura_total": 1,
+          "impacto": 14.9
+        },
+        {
+          "edt": "1.4",
+          "nombre": "Revisión de la información secundaria",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 17,
+          "holgura_total": 3,
+          "impacto": 14
+        },
+        {
+          "edt": "4.1",
+          "nombre": "Revisión del modelo de referencia",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "vencida",
+          "atraso_dias": 9.1,
+          "holgura_total": 1,
+          "impacto": 8.1
+        },
+        {
+          "edt": "1.5",
+          "nombre": "Ajuste de insumos base",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "vencida",
+          "atraso_dias": 12.3,
+          "holgura_total": 4.5,
+          "impacto": 7.800000000000001
+        },
+        {
+          "edt": "3.2",
+          "nombre": "Revisión de la información temática",
+          "frente": "Frente 3 · Trabajo de campo",
+          "estado": "vencida",
+          "atraso_dias": 7.3,
+          "holgura_total": 2,
+          "impacto": 5.3
+        }
+      ],
+      "proximas": [
+        {
+          "edt": "1.6",
+          "nombre": "Síntesis de supuestos técnicos",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "atrasada",
+          "inicio_base": "2026-10-22",
+          "fin_base": "2026-11-13",
+          "holgura_total": 6
+        },
+        {
+          "edt": "1.7",
+          "nombre": "Cierre del modelo de referencia",
+          "frente": "Frente 1 · Descripción técnica del proyecto",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-09",
+          "fin_base": "2026-12-02",
+          "holgura_total": 8
+        },
+        {
+          "edt": "2.3",
+          "nombre": "Revisión de soportes de campo",
+          "frente": "Frente 2 · Información técnica de base",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-03",
+          "fin_base": "2027-01-08",
+          "holgura_total": 4.5
+        },
+        {
+          "edt": "4.3",
+          "nombre": "Síntesis del capítulo consolidado",
+          "frente": "Frente 4 · Modelación técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-03",
+          "fin_base": "2026-12-22",
+          "holgura_total": 12
+        },
+        {
+          "edt": "5.1",
+          "nombre": "Ajuste de la información temática",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "en_curso",
+          "inicio_base": "2026-10-05",
+          "fin_base": "2026-11-13",
+          "holgura_total": 10
+        },
+        {
+          "edt": "5.2",
+          "nombre": "Síntesis de la información secundaria",
+          "frente": "Frente 5 · Caracterización técnica",
+          "estado": "por_iniciar",
+          "inicio_base": "2026-11-03",
+          "fin_base": "2026-12-11",
+          "holgura_total": 20
+        }
+      ]
+    },
+    {
+      "id": "vacio",
+      "corte": null,
+      "estados": [],
+      "total": 0,
+      "ventana_proximas": 14,
+      "frentes": [],
+      "actividades": [],
+      "mueven_fecha": [],
+      "proximas": []
+    }
+  ],
+  "errores": [
+    {
+      "id": "403",
+      "error": "perfil_insuficiente",
+      "perfil_requerido": "seguimiento",
+      "perfil_actual": "ejecutivo"
+    },
+    {
+      "id": "405",
+      "error": "metodo_no_permitido",
+      "permitido": "GET"
+    },
+    {
+      "id": "500",
+      "error": "error_interno",
+      "id_solicitud": "sint-0000-0000"
+    }
+  ]
+}

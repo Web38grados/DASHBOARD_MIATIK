@@ -1,0 +1,15 @@
+{
+  "403": {
+    "error": "perfil_insuficiente",
+    "perfil_requerido": "seguimiento",
+    "perfil_actual": "ejecutivo"
+  },
+  "405": {
+    "error": "metodo_no_permitido",
+    "permitido": "GET"
+  },
+  "500": {
+    "error": "error_interno",
+    "id_solicitud": "sint-0000-0000"
+  }
+}

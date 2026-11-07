@@ -1,0 +1,135 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "E-03 Preparación del documento técnico: promedio simple de E-02 por componente [PEND-DEF-03]. Porcentaje entero, color de marca, sin semáforo (PO E02).",
+  "usermeta": {
+    "id": "e03-preparacion",
+    "version": "1.1",
+    "tablero": "ejecutivo",
+    "elemento_po": "E02",
+    "regla": "E-03",
+    "endpoint": "/v1/tablero/ejecutivo",
+    "datasets": {
+      "preparacion": "[preparacion]"
+    }
+  },
+  "width": 112,
+  "height": 112,
+  "data": {
+    "name": "preparacion"
+  },
+  "transform": [
+    {
+      "calculate": "datum.preparacion_pct",
+      "as": "Preparación"
+    },
+    {
+      "calculate": "100 - datum.preparacion_pct",
+      "as": "Por completar"
+    },
+    {
+      "fold": [
+        "Preparación",
+        "Por completar"
+      ],
+      "as": [
+        "segmento",
+        "valor"
+      ]
+    },
+    {
+      "calculate": "datum.segmento === 'Preparación' ? 0 : 1",
+      "as": "orden"
+    },
+    {
+      "calculate": "'Promedio de la madurez de los ' + datum.componentes + ' componentes clave'",
+      "as": "cuenta"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 43,
+        "outerRadius": 55,
+        "padAngle": 0.015,
+        "cornerRadius": 3
+      },
+      "encoding": {
+        "theta": {
+          "field": "valor",
+          "type": "quantitative",
+          "stack": true
+        },
+        "order": {
+          "field": "orden"
+        },
+        "color": {
+          "field": "segmento",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Preparación",
+              "Por completar"
+            ],
+            "range": [
+              "#20A7C9",
+              "#E6EAEC"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "segmento",
+            "title": "Segmento"
+          },
+          {
+            "field": "valor",
+            "title": "Porcentaje",
+            "format": ".1f"
+          },
+          {
+            "field": "cuenta",
+            "title": "Cuenta directa"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.segmento === 'Preparación'"
+        },
+        {
+          "calculate": "format(datum.valor, '.0f') + ' %'",
+          "as": "etq"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 24,
+        "fontWeight": "bold",
+        "color": "#333333",
+        "baseline": "middle",
+        "font": "Soleil, Segoe UI, Arial, sans-serif"
+      },
+      "encoding": {
+        "x": {
+          "value": 56
+        },
+        "y": {
+          "value": 56
+        },
+        "text": {
+          "field": "etq"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  }
+}

@@ -1,0 +1,96 @@
+/* tokens.css · v1.0 · 05-nov-2026 · PX MiaTik
+   Fuente: tokens de marca definidos por MiaTik.
+   Destino en el servicio: static/tokens.css (LLD-15 §7). Solo tokens: sin reglas de componente.
+   Contraste calculado por script (WCAG 2.x, sobre #FFFFFF):
+     --cm-cian #20A7C9 = 2,83:1  -> solo acentos, rellenos y marcas grandes; nunca texto normal
+     --cm-cian-texto #157A94 = 4,95:1 -> texto y enlaces en cian
+     --cm-tinta #333333 = 12,63:1 · --cm-tinta-2 #666666 = 5,74:1
+     --estado-critico-texto #B42318 = 6,0:1 · --estado-ambar-texto #8F5A00 = 6,0:1 · --estado-verde-texto #1E7B4F = 5,3:1
+   Paleta de estados y de series validada con el validador CVD (ΔE >= 8, ninguna FAIL).
+   Los estados siempre van con texto o ícono, nunca solo color (LLD-15 §7, PO C-04). */
+
+/* Tipografía de marca. Uso web de la tipografía sin verificar (decisión de Dirección).
+   Los archivos de fuente no van en este paquete; se sirven desde static/fonts/ (LLD-15 §7). Sin ellos rige la pila de respaldo.
+   Si la licencia no permite incrustarla, rige la pila de respaldo y no cambia nada más. */
+@font-face { font-family: "Soleil"; font-weight: 300; font-display: swap;
+  src: local("Soleil Light"), url("fonts/SoleilLight.otf") format("opentype"); }
+@font-face { font-family: "Soleil"; font-weight: 400; font-display: swap;
+  src: local("Soleil Book"), url("fonts/SoleilBook.otf") format("opentype"); }
+@font-face { font-family: "Soleil"; font-weight: 500; font-display: swap;
+  src: local("Soleil Regular"), url("fonts/SoleilRegular.otf") format("opentype"); }
+@font-face { font-family: "Soleil"; font-weight: 700; font-display: swap;
+  src: local("Soleil Bold"), url("fonts/SoleilBold.otf") format("opentype"); }
+
+:root {
+  /* Marca (manual: C75 M13 Y16 K0 · R32 G167 B201 · Pantone 2200 C) */
+  --cm-cian: #20A7C9;
+  --cm-cian-texto: #157A94;
+  --cm-cian-oscuro: #0F5F74;
+  --cm-cian-claro: #8FD3E4;
+  --cm-cian-tenue: #E6F5F9;
+  --cm-tinta: #333333;
+  --cm-tinta-2: #666666;
+  --cm-tinta-3: #8A8F93;      /* solo rótulos grandes o decorativos (3,4:1) */
+  --cm-blanco: #FFFFFF;
+
+  /* Superficies */
+  --sup-pagina: #F2F4F5;
+  --sup-tarjeta: #FFFFFF;
+  --sup-cabecera: #333333;     /* fondo oscuro: logo neutro marca/logo-cliente.png (MiaTik pone el real al desplegar) */
+  --sup-cabecera-2: #2A2A2A;
+  --sup-sutil: #F7F9FA;
+  --borde: #DDE2E5;
+  --borde-fuerte: #C4CBCF;
+  --pista: #E6EAEC;            /* fondo de barras y anillos */
+
+  /* Series de datos (validadas) */
+  --serie-real: #20A7C9;       /* avance real, madurez, base actual */
+  --serie-plan: #333333;       /* planeado y referencias: trazo o marca fina */
+  --serie-simulada: #7B5EA7;   /* escenario simulado */
+  --serie-consumido: #A9B1B6;  /* tiempo consumido, ventana programada */
+  --serie-secundaria: #8FD3E4; /* insumos secundarios */
+  --serie-brecha: #C4CBCF;     /* insumos brecha */
+
+  /* Estados (apartados: no se reutilizan como serie) */
+  --estado-verde: #1E7B4F;
+  --estado-ambar: #D29B00;
+  --estado-critico: #B42318;
+  --estado-verde-texto: #1E7B4F;
+  --estado-ambar-texto: #8F5A00;
+  --estado-critico-texto: #B42318;
+  --estado-verde-fondo: #E5F2EB;
+  --estado-ambar-fondo: #FBF1D9;
+  --estado-critico-fondo: #F9E3E1;
+  --estado-neutro: #8A8F93;
+
+  /* Prioridad (E-06): reutiliza estados con texto siempre visible */
+  --prioridad-alta: var(--estado-critico-texto);
+  --prioridad-alta-fondo: var(--estado-critico-fondo);
+  --prioridad-media: var(--estado-ambar-texto);
+  --prioridad-media-fondo: var(--estado-ambar-fondo);
+  --prioridad-baja: var(--cm-tinta-2);
+  --prioridad-baja-fondo: var(--sup-sutil);
+
+  /* Tipografía */
+  --fuente: "Soleil", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --fuente-cifras: "Soleil", "Segoe UI", Arial, sans-serif; /* cifras tabulares vía font-variant */
+  --t-xs: 12px;  --t-sm: 13px;  --t-md: 14px;  --t-lg: 16px;  --t-xl: 20px;
+  --t-2xl: 26px; --t-3xl: 34px; --t-hero: 44px;
+  --peso-light: 300; --peso-book: 400; --peso-regular: 500; --peso-bold: 700;
+  --interlinea: 1.35;
+
+  /* Espaciado (base 4) */
+  --e-1: 4px; --e-2: 8px; --e-3: 12px; --e-4: 16px; --e-5: 20px; --e-6: 24px; --e-8: 32px;
+
+  /* Forma */
+  --radio-sm: 4px; --radio: 8px; --radio-lg: 12px; --radio-pill: 999px;
+  --sombra: 0 1px 2px rgba(51,51,51,.06), 0 2px 8px rgba(51,51,51,.06);
+  --foco: 0 0 0 3px rgba(32,167,201,.45);
+
+  /* Lienzo */
+  --ancho-min: 1280px;
+}
+
+@media print {
+  :root { --sup-pagina: #FFFFFF; --sombra: none; }
+}

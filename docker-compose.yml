@@ -1,0 +1,22 @@
+# Entorno local con Docker: dashboard en http://localhost:8080 con el mock de db.json.
+#   docker compose up --build
+# Contra una API real, quitar el servicio `mock` y apuntar API_UPSTREAM a ella.
+services:
+  mock:
+    build:
+      context: .
+      target: mock
+    read_only: true
+    expose:
+      - "3001"
+
+  web:
+    build:
+      context: .
+      target: web
+    environment:
+      API_UPSTREAM: http://mock:3001
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mock

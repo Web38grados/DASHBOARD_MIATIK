@@ -1,0 +1,216 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "E-04 Confianza en la fecha: medidor de tres tramos. El nivel es la etiqueta de la tarjeta fija confianza de tab.publicacion (LLD-15 v1.0 E-04, T-TAB-11); no se calcula. La página siempre lo repite en texto (C-04).",
+  "usermeta": {
+    "id": "e04-confianza",
+    "version": "1.0",
+    "tablero": "ejecutivo",
+    "elemento_po": "E04",
+    "regla": "E-04",
+    "endpoint": "/v1/tablero/ejecutivo",
+    "datasets": {
+      "confianza": "[{k: 1, nivel: confianza.etiqueta}]"
+    },
+    "nota": "Los tramos son fijos de presentación; solo el nivel viene de la tarjeta fija (etiqueta)."
+  },
+  "width": "container",
+  "height": 58,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "datasets": {
+    "tramos": [
+      {
+        "k": 1,
+        "nivel": "baja",
+        "etq": "Baja",
+        "ini": 0,
+        "fin": 1,
+        "regla": "Nivel publicado en la tarjeta fija confianza (etiqueta); no se calcula"
+      },
+      {
+        "k": 1,
+        "nivel": "media",
+        "etq": "Media",
+        "ini": 1,
+        "fin": 2,
+        "regla": "Nivel publicado en la tarjeta fija confianza (etiqueta); no se calcula"
+      },
+      {
+        "k": 1,
+        "nivel": "alta",
+        "etq": "Alta",
+        "ini": 2,
+        "fin": 3,
+        "regla": "Nivel publicado en la tarjeta fija confianza (etiqueta); no se calcula"
+      }
+    ]
+  },
+  "data": {
+    "name": "tramos"
+  },
+  "transform": [
+    {
+      "lookup": "k",
+      "from": {
+        "data": {
+          "name": "confianza"
+        },
+        "key": "k",
+        "fields": [
+          "nivel"
+        ]
+      },
+      "as": [
+        "sel"
+      ]
+    },
+    {
+      "calculate": "datum.nivel === datum.sel ? 1 : 0",
+      "as": "activo"
+    },
+    {
+      "calculate": "(datum.ini + datum.fin) / 2",
+      "as": "mid"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          3
+        ],
+        "nice": false
+      },
+      "axis": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": 16,
+        "cornerRadius": 3,
+        "y": 22
+      },
+      "encoding": {
+        "x": {
+          "field": "ini"
+        },
+        "x2": {
+          "field": "fin"
+        },
+        "color": {
+          "field": "nivel",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "baja",
+              "media",
+              "alta"
+            ],
+            "range": [
+              "#B42318",
+              "#D29B00",
+              "#1E7B4F"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.activo === 1",
+            "value": 1
+          },
+          "value": 0.22
+        },
+        "tooltip": [
+          {
+            "field": "etq",
+            "title": "Nivel"
+          },
+          {
+            "field": "regla",
+            "title": "Regla"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "y": 48,
+        "color": "#666666",
+        "font": "Soleil, Segoe UI, Arial, sans-serif",
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "x": {
+          "field": "mid"
+        },
+        "text": {
+          "field": "etq"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activo !== 1"
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "y": 48,
+        "color": "#333333",
+        "font": "Soleil, Segoe UI, Arial, sans-serif",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "mid"
+        },
+        "text": {
+          "field": "etq"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activo === 1"
+        }
+      ]
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.activo === 1"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "triangle-down",
+        "size": 150,
+        "filled": true,
+        "color": "#333333",
+        "y": 6,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "mid"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  }
+}
