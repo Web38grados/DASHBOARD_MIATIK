@@ -1,0 +1,168 @@
+{
+  "corte": {
+    "corte_id": 3,
+    "fecha_corte": "2026-11-02"
+  },
+  "serie": [
+    {
+      "corte_id": 1,
+      "fecha_corte": "2026-10-05",
+      "fecha_base": "2027-07-02",
+      "fecha_proyectada": "2027-08-10"
+    },
+    {
+      "corte_id": 2,
+      "fecha_corte": "2026-10-19",
+      "fecha_base": "2027-07-02",
+      "fecha_proyectada": "2027-08-18"
+    },
+    {
+      "corte_id": 3,
+      "fecha_corte": "2026-11-02",
+      "fecha_base": "2027-07-02",
+      "fecha_proyectada": "2027-08-24"
+    }
+  ],
+  "extrapolacion_sin_avance": [
+    {
+      "fecha_eje": "2026-11-02",
+      "fecha_proyectada": "2027-08-24"
+    },
+    {
+      "fecha_eje": "2026-11-09",
+      "fecha_proyectada": "2027-08-31"
+    },
+    {
+      "fecha_eje": "2026-11-16",
+      "fecha_proyectada": "2027-09-06"
+    },
+    {
+      "fecha_eje": "2026-11-23",
+      "fecha_proyectada": "2027-09-13"
+    },
+    {
+      "fecha_eje": "2026-11-30",
+      "fecha_proyectada": "2027-09-20"
+    },
+    {
+      "fecha_eje": "2026-12-07",
+      "fecha_proyectada": "2027-09-27"
+    },
+    {
+      "fecha_eje": "2026-12-14",
+      "fecha_proyectada": "2027-10-01"
+    },
+    {
+      "fecha_eje": "2026-12-21",
+      "fecha_proyectada": "2027-10-08"
+    },
+    {
+      "fecha_eje": "2026-12-28",
+      "fecha_proyectada": "2027-10-14"
+    },
+    {
+      "fecha_eje": "2027-01-04",
+      "fecha_proyectada": "2027-10-21"
+    },
+    {
+      "fecha_eje": "2027-01-11",
+      "fecha_proyectada": "2027-10-27"
+    },
+    {
+      "fecha_eje": "2027-01-18",
+      "fecha_proyectada": "2027-11-04"
+    },
+    {
+      "fecha_eje": "2027-01-25",
+      "fecha_proyectada": "2027-11-11"
+    },
+    {
+      "fecha_eje": "2027-02-01",
+      "fecha_proyectada": "2027-11-19"
+    },
+    {
+      "fecha_eje": "2027-02-08",
+      "fecha_proyectada": "2027-11-26"
+    },
+    {
+      "fecha_eje": "2027-02-15",
+      "fecha_proyectada": "2027-12-03"
+    },
+    {
+      "fecha_eje": "2027-02-22",
+      "fecha_proyectada": "2027-12-13"
+    },
+    {
+      "fecha_eje": "2027-03-01",
+      "fecha_proyectada": "2027-12-20"
+    },
+    {
+      "fecha_eje": "2027-03-08",
+      "fecha_proyectada": "2027-12-27"
+    },
+    {
+      "fecha_eje": "2027-03-15",
+      "fecha_proyectada": "2028-01-03"
+    },
+    {
+      "fecha_eje": "2027-03-22",
+      "fecha_proyectada": "2028-01-07"
+    },
+    {
+      "fecha_eje": "2027-03-29",
+      "fecha_proyectada": "2028-01-13"
+    },
+    {
+      "fecha_eje": "2027-04-05",
+      "fecha_proyectada": "2028-01-20"
+    },
+    {
+      "fecha_eje": "2027-04-12",
+      "fecha_proyectada": "2028-01-27"
+    },
+    {
+      "fecha_eje": "2027-04-19",
+      "fecha_proyectada": "2028-02-03"
+    },
+    {
+      "fecha_eje": "2027-04-26",
+      "fecha_proyectada": "2028-02-10"
+    },
+    {
+      "fecha_eje": "2027-05-03",
+      "fecha_proyectada": "2028-02-17"
+    },
+    {
+      "fecha_eje": "2027-05-10",
+      "fecha_proyectada": "2028-02-23"
+    },
+    {
+      "fecha_eje": "2027-05-17",
+      "fecha_proyectada": "2028-03-01"
+    },
+    {
+      "fecha_eje": "2027-05-24",
+      "fecha_proyectada": "2028-03-08"
+    },
+    {
+      "fecha_eje": "2027-05-31",
+      "fecha_proyectada": "2028-03-14"
+    },
+    {
+      "fecha_eje": "2027-06-07",
+      "fecha_proyectada": "2028-03-21"
+    },
+    {
+      "fecha_eje": "2027-06-14",
+      "fecha_proyectada": "2028-03-28"
+    },
+    {
+      "fecha_eje": "2027-06-21",
+      "fecha_proyectada": "2028-04-04"
+    },
+    {
+      "fecha_eje": "2027-06-28",
+      "fecha_proyectada": "2028-04-11"
+    }
+  ]
+}

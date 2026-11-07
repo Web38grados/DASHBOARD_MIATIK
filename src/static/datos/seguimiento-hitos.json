@@ -1,0 +1,82 @@
+{
+  "corte": {
+    "corte_id": 3,
+    "fecha_corte": "2026-11-02"
+  },
+  "hitos": [
+    {
+      "fecha": "2026-08-03",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Reunión de arranque"
+      ],
+      "estado": "cumplido"
+    },
+    {
+      "fecha": "2026-12-18",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 1"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-03-26",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 4"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-05-14",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 6"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-05-21",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 5"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-05-28",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 3"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-06-11",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 7"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-06-25",
+      "hitos": 1,
+      "nombres": [
+        "Hito · Entrega del frente 2"
+      ],
+      "estado": "por_venir"
+    },
+    {
+      "fecha": "2027-07-02",
+      "hitos": 3,
+      "nombres": [
+        "Hito · Entrega del frente 8",
+        "Hito · Aprobación de la base de datos",
+        "Hito · Entregable definitivo"
+      ],
+      "estado": "por_venir"
+    }
+  ]
+}

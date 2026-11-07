@@ -1,0 +1,233 @@
+{
+  "corte": {
+    "corte_id": 3,
+    "fecha_corte": "2026-11-02"
+  },
+  "cabecera": {
+    "nombre_tablero": "Tablero de preparación del documento técnico",
+    "meta_fecha": "2027-07-15"
+  },
+  "madurez_componentes": [
+    {
+      "componente": "Componente A · Descripción del proyecto",
+      "orden": 1,
+      "filas": 58,
+      "con_dato": 40,
+      "proyectadas": 8,
+      "pendientes": 6,
+      "brechas": 4,
+      "otros": 0,
+      "madurez_pct": 68.96551724137932
+    },
+    {
+      "componente": "Componente B · Caracterización técnica",
+      "orden": 2,
+      "filas": 78,
+      "con_dato": 48,
+      "proyectadas": 14,
+      "pendientes": 10,
+      "brechas": 6,
+      "otros": 0,
+      "madurez_pct": 61.53846153846154
+    },
+    {
+      "componente": "Componente C · Información de soporte",
+      "orden": 3,
+      "filas": 52,
+      "con_dato": 28,
+      "proyectadas": 10,
+      "pendientes": 9,
+      "brechas": 5,
+      "otros": 0,
+      "madurez_pct": 53.84615384615385
+    },
+    {
+      "componente": "Componente D · Análisis de resultados",
+      "orden": 4,
+      "filas": 50,
+      "con_dato": 30,
+      "proyectadas": 9,
+      "pendientes": 7,
+      "brechas": 4,
+      "otros": 0,
+      "madurez_pct": 60.0
+    },
+    {
+      "componente": "Componente E · Planes de acción y seguimiento",
+      "orden": 5,
+      "filas": 52,
+      "con_dato": 22,
+      "proyectadas": 12,
+      "pendientes": 10,
+      "brechas": 8,
+      "otros": 0,
+      "madurez_pct": 42.30769230769231
+    }
+  ],
+  "preparacion": {
+    "preparacion_pct": 57.331564986737405,
+    "componentes": 5
+  },
+  "confianza": {
+    "orden": 1,
+    "titulo": "Confianza en la fecha",
+    "detalle": "El avance de este corte sostiene la fecha meta con el plan vigente (texto sintético).",
+    "etiqueta": "Alta",
+    "mes": null,
+    "valor": null
+  },
+  "base_informacion": {
+    "total": 156,
+    "clases": [
+      {
+        "clase": "primaria",
+        "insumos": 87
+      },
+      {
+        "clase": "secundaria",
+        "insumos": 46
+      },
+      {
+        "clase": "brecha",
+        "insumos": 23
+      }
+    ]
+  },
+  "brechas_criticas": {
+    "items": [
+      {
+        "orden": 1,
+        "titulo": "Definición pendiente de los supuestos de diseño del componente principal",
+        "detalle": "Condiciona la descripción del proyecto y su alcance técnico (sintético).",
+        "etiqueta": "Alta",
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 2,
+        "titulo": "Modelo de referencia sin calibrar con la segunda campaña de campo",
+        "detalle": "Afecta el análisis de resultados y su cronograma (sintético).",
+        "etiqueta": "Alta",
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 3,
+        "titulo": "Información secundaria incompleta para un frente de caracterización",
+        "detalle": "Se cubre con proyección mientras llega el insumo (sintético).",
+        "etiqueta": "Media",
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 4,
+        "titulo": "Acuerdos de acceso para la campaña de campo de temporada",
+        "detalle": "Puede correr la campaña de campo (sintético).",
+        "etiqueta": "Media",
+        "mes": null,
+        "valor": null
+      }
+    ]
+  },
+  "prioridades": {
+    "items": [
+      {
+        "orden": 1,
+        "titulo": "Cierre de supuestos de diseño y alcance del trabajo",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": "2026-12-01",
+        "valor": null
+      },
+      {
+        "orden": 2,
+        "titulo": "Calibración del modelo de referencia con datos de campo",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": "2026-12-01",
+        "valor": null
+      },
+      {
+        "orden": 3,
+        "titulo": "Acuerdos de acceso para la campaña de temporada",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": "2027-01-01",
+        "valor": null
+      }
+    ]
+  },
+  "capacidades": {
+    "items": [
+      {
+        "orden": 1,
+        "titulo": "Síntesis de estudios",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 2,
+        "titulo": "Contraste con proyectos comparables",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 3,
+        "titulo": "Identificación de brechas",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 4,
+        "titulo": "Borradores por capítulo",
+        "detalle": null,
+        "etiqueta": null,
+        "mes": null,
+        "valor": null
+      }
+    ],
+    "aceleracion": null
+  },
+  "flujo": {
+    "items": [
+      {
+        "orden": 1,
+        "titulo": "Insumos",
+        "detalle": "Información del proyecto y referencias comparables",
+        "etiqueta": "Paso 1",
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 2,
+        "titulo": "Análisis con IA",
+        "detalle": "Integración, síntesis y contraste",
+        "etiqueta": "Paso 2",
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 3,
+        "titulo": "Brechas y prioridades",
+        "detalle": "Identificación y plan de cierre",
+        "etiqueta": "Paso 3",
+        "mes": null,
+        "valor": null
+      },
+      {
+        "orden": 4,
+        "titulo": "Validación técnica",
+        "detalle": "Revisión de especialistas y consolidación en el documento técnico",
+        "etiqueta": "Paso 4",
+        "mes": null,
+        "valor": null
+      }
+    ]
+  }
+}

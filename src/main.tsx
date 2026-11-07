@@ -2,6 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import './index.css'
+import './static/tokens.css'
+import './static/tablero.css'
+import './static/ajustes-maqueta.css'
+import './static/tema-oscuro-ejecutivo.css'
 
 const rootElement = document.getElementById('root')
 
